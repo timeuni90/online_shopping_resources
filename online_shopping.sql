@@ -30,7 +30,7 @@ drop table if exists tb_commodity_select_property;
 
 drop table if exists tb_commodity_variable;
 
-drop table if exists tb_commotity_variety;
+drop table if exists tb_commodity_variety;
 
 drop table if exists tb_history;
 
@@ -69,10 +69,10 @@ create table tb_cart
 (
    id                   int not null auto_increment,
    user_id              int,
-   class                varchar(20),
+   select_property_row                varchar(20),
    quantity             int,
    primary key (id),
-	 unique user_class_unique (user_id, class)
+	 unique user_row_unique (user_id, select_property_row)
 );
 
 /*==============================================================*/
@@ -195,12 +195,12 @@ create table tb_commodity_select_property
 (
    id                   int not null auto_increment,
    commodity_id         int,
-   class                varchar(20),
+   select_property_row                varchar(20),
    media_type           int,
    property_name        varchar(50),
    property_value       varchar(100),
    primary key (id), 
-	 index class_index (class)
+	 index row_index (select_property_row)
 );
 
 /*==============================================================*/
@@ -209,18 +209,18 @@ create table tb_commodity_select_property
 create table tb_commodity_variable
 (
    id                   int not null auto_increment,
-   class                varchar(20),
+   select_property_row                varchar(20),
    stock                int,
    price                float(20,2),
    promotion_price      float(20,2),
    primary key (id),
-	 unique class_unique (class)
+	 unique row_unique (select_property_row)
 );
 
 /*==============================================================*/
-/* Table: tb_commotity_variety                                  */
+/* Table: tb_commodity_variety                                  */
 /*==============================================================*/
-create table tb_commotity_variety
+create table tb_commodity_variety
 (
    id                   int not null auto_increment,
    commodity_id         int,
