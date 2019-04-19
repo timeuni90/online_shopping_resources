@@ -253,7 +253,7 @@ create table tb_order
    order_number         varchar(20),
    user_name            varchar(20),
    store_name           varchar(20),
-   generate_time        datetime,
+   generate_time        datetime default now(),
    status               int,
    is_delete            bool default false,
    receive_address      char(200),
@@ -267,7 +267,7 @@ create table tb_order
 create table tb_order_commodity_select_property
 (
    id                   int not null auto_increment,
-   commodity_id         int,
+   order_detail_id        int,
    property_name        varchar(50),
    property_value       varchar(100),
    primary key (id)
@@ -285,8 +285,8 @@ create table tb_order_detail
    commodity_cover      varchar(100),
    price                float(20,2),
    promotion_price      float(20,2),
+   quantity		int,
    primary key (id),
-	 unique order_commodity_unique (order_id, commodity_id)
 );
 
 /*==============================================================*/
