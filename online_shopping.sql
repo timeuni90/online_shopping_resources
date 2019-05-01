@@ -131,7 +131,7 @@ create table tb_comment_append
    comment_id           int,
    comment              text,
 	 reply								text,
-   comment_time         datetime,
+   comment_time         datetime default now(),
    primary key (id)
 );
 
