@@ -1,1029 +1,737 @@
-<!DOCTYPE html>
 <html>
+<!DOCTYPE html>
 	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<meta charset="utf-8">
-
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>确认订单</title>
-
-		<!-- globalmodule version: 3.0.84 -->
-		<link rel="stylesheet" href="static/css/order_confirm/global.css">
-
-		<link rel="stylesheet" href="static/css/order_confirm/AIO-tmall.css">
-
-		<style>
-			.ww-light {
-				overflow: hidden;
-			}
-			
-			.ww-block {
-				display: block;
-				margin-top: 3px;
-			}
-			
-			.ww-inline {
-				display: inline-block;
-				vertical-align: text-bottom;
-			}
-			
-			.ww-light a {
-				background-image: url1("//img.alicdn.com/tps/i1/T15AD7FFFaXXbJnvQ_-130-60.gif");
-				background-image: -webkit-image-set(url1("//img.alicdn.com/tps/i1/T15AD7FFFaXXbJnvQ_-130-60.gif") 1x, url1("//img.alicdn.com/tps/i4/T1Rsz7FPJaXXbZhKn7-520-240.gif") 4x);
-				background-image: -moz-image-set(url1("//img.alicdn.com/tps/i1/T15AD7FFFaXXbJnvQ_-130-60.gif") 1x, url1("//img.alicdn.com/tps/i4/T1Rsz7FPJaXXbZhKn7-520-240.gif") 4x);
-				background-image: -o-image-set(url1("//img.alicdn.com/tps/i1/T15AD7FFFaXXbJnvQ_-130-60.gif") 1x, url1("//img.alicdn.com/tps/i4/T1Rsz7FPJaXXbZhKn7-520-240.gif") 4x);
-				background-image: -ms-image-set(url1("//img.alicdn.com/tps/i1/T15AD7FFFaXXbJnvQ_-130-60.gif") 1x, url1("//img.alicdn.com/tps/i4/T1Rsz7FPJaXXbZhKn7-520-240.gif") 4x);
-				text-decoration: none!important;
-				width: 20px;
-				height: 20px;
-				zoom: 1;
-			}
-			
-			.ww-large a {
-				width: 67px;
-			}
-			
-			a.ww-offline {
-				background-position: 0 -20px;
-			}
-			
-			a.ww-mobile {
-				background-position: 0 -40px;
-			}
-			
-			.ww-small .ww-online {
-				background-position: -80px 0;
-			}
-			
-			.ww-small .ww-offline {
-				background-position: -80px -20px;
-			}
-			
-			.ww-small .ww-mobile {
-				background-position: -80px -40px;
-			}
-			
-			.ww-static .ww-online {
-				background-position: -110px 0;
-			}
-			
-			.ww-static .ww-offline {
-				background-position: -110px -20px;
-			}
-			
-			.ww-static .ww-mobile {
-				background-position: -110px -40px;
-			}
-			
-			.ww-light a span {
-				display: none;
-			}
-		</style>
-		<style>
-			#tstart-plugin-switch .tstart-item-icon,
-			.tstart-minimized .switch-mini,
-			#tstart .i-arrow,
-			#tstart .msg-count,
-			#tstart .msg-count span,
-			#tstart .icon-new,
-			#tstart-plugin-news .t-msg-count .arrow,
-			#tstart .switch-mini-tip {
-				background-image: url1(//img.alicdn.com/tps/i3/T1zYneXXlqXXaloVr4-167-122.png);
-				background-repeat: no-repeat
-			}
-			
-			body,
-			#tstart h1,
-			#tstart h2,
-			#tstart h3,
-			#tstart h4,
-			#tstart h5,
-			#tstart h6,
-			#tstart hr,
-			#tstart p,
-			#tstart dl,
-			#tstart dt,
-			#tstart dd,
-			#tstart ul,
-			#tstart ol,
-			#tstart li,
-			#tstart pre,
-			#tstart form,
-			#tstart fieldset,
-			#tstart legend,
-			#tstart button,
-			#tstart input,
-			#tstart th,
-			#tstart td {
-				margin: 0;
-				padding: 0
-			}
-			
-			body,
-			#tstart button,
-			#start input,
-			#tstart select {
-				font: 12px/1.5 tahoma, arial, b8bf53, sans-serif
-			}
-			
-			#tstart h1,
-			#tstart h2,
-			#tstart h3,
-			#tstart h4,
-			#tstart h5,
-			#tstart h6 {
-				font-size: 100%
-			}
-			
-			#tstart address,
-			#tstart em {
-				font-style: normal
-			}
-			
-			#tstart code,
-			#tstart pre {
-				font-family: courier new, courier, monospace
-			}
-			
-			#tstart small {
-				font-size: 12px
-			}
-			
-			#tstart ul,
-			#tstart ol {
-				list-style: none
-			}
-			
-			#tstart a {
-				text-decoration: none
-			}
-			
-			#tstart sup {
-				vertical-align: text-top
-			}
-			
-			#tstart sub {
-				vertical-align: text-bottom
-			}
-			
-			#tstart legend {
-				color: #000
-			}
-			
-			#tstart fieldset,
-			#tstart img {
-				border: 0;
-				margin: 0;
-				float: none
-			}
-			
-			#tstart button,
-			#tstart input,
-			#tstart select {
-				font-size: 100%
-			}
-			
-			#tstart .hidden,
-			#tstart .tstart-hidden {
-				display: none!important
-			}
-			
-			#tstart .invisible,
-			#tstart .tstart-invisible {
-				visibility: hidden!important
-			}
-			
-			#tstart {
-				position: fixed;
-				right: 0;
-				bottom: 0;
-				z-index: 100000;
-				_position: absolute;
-				height: 28px;
-				color: #3e3e3e;
-				text-align: left;
-				_right: 1px
-			}
-			
-			#tstart .tstart-toolbar {
-				height: 28px;
-				float: right;
-				right: 0
-			}
-			
-			#tstart a {
-				color: #000;
-				text-decoration: none
-			}
-			
-			#tstart .tstart-bd {
-				height: 28px;
-				margin: 0
-			}
-			
-			#tstart .tstart-areas {
-				position: relative;
-				zoom: 1;
-				height: 28px;
-				line-height: 28px;
-				float: right;
-			}
-			
-			#tstart .tstart-item {
-				position: relative;
-				zoom: 1;
-				float: left;
-				display: block;
-				height: 28px;
-			}
-			
-			#tstart .tstart-link-item a {
-				float: left;
-				padding: 0 8px
-			}
-			
-			#tstart a:hover {
-				color: #f60;
-				text-decoration: underline
-			}
-			
-			#tstart .tstart-normal-trigger,
-			#tstart .tstart-drop-trigger {
-				cursor: pointer;
-				padding: 0 8px
-			}
-			
-			#tstart .i-arrow {
-				width: 5px;
-				height: 3px;
-				position: absolute;
-				right: 0;
-				top: 12px;
-				background-position: -134px -59px
-			}
-			
-			#tstart .tstart-item-active .i-arrow {
-				display: none
-			}
-			
-			#tstart i {
-				background: 0;
-				display: inline-block;
-				height: auto;
-				line-height: 1;
-				margin: auto;
-				overflow: hidden;
-				text-indent: 0;
-				vertical-align: middle;
-				width: auto
-			}
-			
-			#tstart-plugin-switch {
-				height: 25px
-			}
-			
-			#tstart-plugin-switch .toggle-area {
-				cursor: pointer
-			}
-			
-			#tstart-plugin-switch a {
-				display: none
-			}
-			
-			#tstart-plugin-switch .tstart-item-icon {
-				display: inline-block;
-				width: 19px;
-				height: 25px;
-				line-height: 100px;
-				overflow: hidden;
-				zoom: 1;
-				background-position: 0 -59px;
-				vertical-align: middle;
-				font-size: 0;
-				margin-top: 0;
-				vertical-align: top
-			}
-			
-			.tstart-minimized #tstart-plugin-switch .tstart-item-icon {
-				background-position: -18px -59px
-			}
-			
-			#tstart .switch-mini-tip {
-				display: none;
-				width: 135px;
-				height: 28px;
-				overflow: hidden;
-				position: absolute;
-				top: -30px;
-				margin-left: -160px;
-				background-position: 0 -94px
-			}
-			
-			.tstart-minimized .hover .switch-mini-tip {
-				display: inline-block!important
-			}
-			
-			.tstart-minimized .switch-mini {
-				display: inline-block!important;
-				width: 17px;
-				height: 17px;
-				overflow: hidden;
-				vertical-align: middle;
-				margin: 0 5px;
-				background-position: -47px -59px;
-				*margin-top: 5px
-			}
-			
-			.tstart-minimized .hover .switch-mini {
-				background-position: -69px -59px
-			}
-			
-			.tstart-minimized .tstart-bd {
-				float: right;
-				width: auto;
-				display: inline
-			}
-			
-			.tstart-minimized .tstart-areas {
-				float: left;
-				background: green
-			}
-			
-			.tstart-minimized .tstart-item {
-				display: none
-			}
-			
-			.tstart-minimized #tstart-plugin-tdog,
-			.tstart-minimized #tstart-plugin-settings,
-			.tstart-minimized #tstart-plugin-switch {
-				display: block
-			}
-			
-			.tstart-news-tip {
-				position: absolute;
-				bottom: 0;
-				left: 0
-			}
-			
-			#tstart-plugin-news .t-msg-count {
-				position: absolute;
-				bottom: -30px;
-				right: 5px;
-				color: #fff;
-				display: inline-block;
-				text-align: right;
-				*width: 132px
-			}
-			
-			#tstart-plugin-news .t-msg-count .tip {
-				display: inline-block;
-				text-decoration: none;
-				border: 1px solid #fbce67;
-				background-color: #fee195;
-				color: #3f4537;
-				height: 21px;
-				line-height: 21px;
-				white-space: nowrap;
-				padding: 0 15px;
-				font-weight: 400;
-				background-repeat: repeat-x;
-				background-position: 0 -134px
-			}
-			
-			#tstart-plugin-news .t-msg-count em {
-				color: #ff4300;
-				font-weight: 400;
-				text-decoration: none;
-				font-style: normal;
-				margin: 0 3px
-			}
-			
-			#tstart-plugin-news .t-msg-count .arrow {
-				width: 11px;
-				height: 6px;
-				right: 10px;
-				top: 23px;
-				position: absolute;
-				z-index: 2;
-				background-position: -112px -59px
-			}
-			
-			#tstart .tstart-item-active .t-msg-count {
-				visibility: hidden
-			}
-			
-			#tstart .msg-count,
-			#tstart .msg-count span {
-				display: inline-block;
-				height: 22px
-			}
-			
-			#tstart .msg-count {
-				padding-right: 5px;
-				background-position: right -32px;
-				position: absolute;
-				top: -15px;
-				right: 0;
-				color: #fff;
-				font-weight: 600;
-				line-height: 16px
-			}
-			
-			#tstart .msg-count span {
-				padding-left: 5px;
-				background-position: 0 0
-			}
-			
-			#tstart .tstart-item-active .msg-count {
-				display: none
-			}
-			
-			#tstart-plugin-myapps .tip-intro {
-				background: none repeat scroll 0 0 #ffffc5;
-				border: 1px solid #d4d4d4;
-				height: 24px;
-				left: 0;
-				line-height: 23px;
-				overflow: visible;
-				position: absolute;
-				top: -30px;
-				width: 290px;
-				z-index: 60
-			}
-			
-			#tstart-plugin-myapps .tip-intro i,
-			#tstart-plugin-myapps .tip-intro .close,
-			#tstart-plugin-myapps .tip-intro s {
-				background: url1(//img.alicdn.com/tps/i4/T1m4KGXi8jXXXXXXXX-120-213.png) no-repeat 0 0
-			}
-			
-			#tstart-plugin-myapps .tip-intro i,
-			#tstart-plugin-myapps .tip-intro .close {
-				width: 23px;
-				height: 23px;
-				line-height: 23px;
-				display: inline-block
-			}
-			
-			#tstart-plugin-myapps .tip-intro i {
-				background-position: 0 -190px
-			}
-			
-			#tstart-plugin-myapps .tip-intro .close {
-				background-position: -23px -190px;
-				display: block;
-				overflow: hidden;
-				position: absolute;
-				right: 0;
-				text-indent: -1000px;
-				top: 0;
-				cursor: pointer
-			}
-			
-			#tstart-plugin-myapps .tip-intro s {
-				background-position: -46px -190px;
-				display: block;
-				height: 13px;
-				left: 20px;
-				position: absolute;
-				top: 24px;
-				width: 23px;
-				z-index: 100
-			}
-			
-			#tstart-plugin-myapps .tip-intro a {
-				color: #004d99
-			}
-			
-			#tstart .icon-new {
-				width: 21px;
-				height: 16px;
-				position: absolute;
-				top: -7px;
-				right: 0;
-				background-position: -96px -76px
-			}
-			
-			#tstart .tstart-item-active .tip-new {
-				display: none
-			}
-			
-			#tstart .tstart-drop-panel {
-				position: absolute
-			}
-		</style>
-		<link rel="stylesheet" href="static/css/order_confirm/tstart.css">
-		<link rel="stylesheet" href="static/css/order_confirm/tdog.css">
-		<style>
-			.ww-light {
-				overflow: hidden;
-			}
-			
-			.ww-block {
-				display: block;
-				margin-top: 3px;
-			}
-			
-			.ww-inline {
-				display: inline-block;
-				vertical-align: text-bottom;
-			}
-			
-			.ww-light a {
-				background-image: url1("//img.alicdn.com/tps/i1/T15AD7FFFaXXbJnvQ_-130-60.gif");
-				background-image: -webkit-image-set(url1("//img.alicdn.com/tps/i1/T15AD7FFFaXXbJnvQ_-130-60.gif") 1x, url1("//img.alicdn.com/tps/i4/T1Rsz7FPJaXXbZhKn7-520-240.gif") 4x);
-				background-image: -moz-image-set(url1("//img.alicdn.com/tps/i1/T15AD7FFFaXXbJnvQ_-130-60.gif") 1x, url1("//img.alicdn.com/tps/i4/T1Rsz7FPJaXXbZhKn7-520-240.gif") 4x);
-				background-image: -o-image-set(url1("//img.alicdn.com/tps/i1/T15AD7FFFaXXbJnvQ_-130-60.gif") 1x, url1("//img.alicdn.com/tps/i4/T1Rsz7FPJaXXbZhKn7-520-240.gif") 4x);
-				background-image: -ms-image-set(url1("//img.alicdn.com/tps/i1/T15AD7FFFaXXbJnvQ_-130-60.gif") 1x, url1("//img.alicdn.com/tps/i4/T1Rsz7FPJaXXbZhKn7-520-240.gif") 4x);
-				text-decoration: none!important;
-				width: 20px;
-				height: 20px;
-				zoom: 1;
-			}
-			
-			.ww-large a {
-				width: 67px;
-			}
-			
-			a.ww-offline {
-				background-position: 0 -20px;
-			}
-			
-			a.ww-mobile {
-				background-position: 0 -40px;
-			}
-			
-			.ww-small .ww-online {
-				background-position: -80px 0;
-			}
-			
-			.ww-small .ww-offline {
-				background-position: -80px -20px;
-			}
-			
-			.ww-small .ww-mobile {
-				background-position: -80px -40px;
-			}
-			
-			.ww-static .ww-online {
-				background-position: -110px 0;
-			}
-			
-			.ww-static .ww-offline {
-				background-position: -110px -20px;
-			}
-			
-			.ww-static .ww-mobile {
-				background-position: -110px -40px;
-			}
-			
-			.ww-light a span {
-				display: none;
-			}
-		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="static/css/order_confirm/layout-a2ae44047d.css">
+		<link href="static/css/order_confirm/add-8f4ba0d484.css" rel="stylesheet">
 	</head>
 
-	<body class="$bodyClass">
+	<body>
+		<!-- common header -->
 
-		<div id="mallPage" class="  tmall- page-not-market " data-spm-anchor-id="a220l.1.0.i3.2eb57f33DzF3fI">
-			<style>
-				button {
-					border-radius: 0;
-				}
-			</style>
-			<!--from fragment-->
-			<div id="site-nav" data-spm="a2226mz" role="navigation">
-				<div id="sn-bg">
-					<div class="sn-bg-right">
-					</div>
+		<div class="layout-header clearfix layout-header-order login" id="layoutHeader">
+			<div class="mzcontainer">
+				<div class="layout-header-logo">
+					<a target="_blank" href="http://www.meizu.com" class="layout-header-logo-link" alt="魅族科技" data-mdesc="购物车页头logo" data-mtype="store_cart_yt_logo" data-bh="click_store_cart_yt_logo">
+						<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAAuCAYAAAABQwQEAAAAAXNSR0IArs4c6QAACShJREFUeAHtXWmMFEUU/mpYIeCFEkR/YEAgMWLwwki8AFEWZokHATUBMf7wQI0catRoUELiES/wiP5Qo1HjRSTizuyuoKhBjQoxMUGNSjyIoiiniqLLPr+aZRYWpqurh56Zrp6qpDPTXa+q3vuqv67uqldVCqXCMjkU/+JSRl3A4zgIjuJvz1Kiib2m8Bf1/pn6rYbCEgzgMVL9F6u+bXI8dhInQSPzPZpHf/5XsZaxP5kpPIQmdaNVFjnZQN37G2X74hCcqf4wyqyQBiIfL87GAsuIVNjGVF+wpp7ARLwIpXYac1ku/fAPfjfKZPAAsupmo0ylInPyDOvuClP2Dd0iRRRyuB47cCev9+sW59qJ4ECqPKxwCMn4C75Bs8zBJJXbb1Pa5Ai040Ee0xJF7H0NS85DZ1/dandF+MACRrHuRvF+n4RVMi32RqB21pUsOdN19UPpTaNf4fkjPNwmeZdR3f4M4xP8TZJ9XrerUU9aZATbq095k0xPOMmjWlav8lPZCMwyGt/OmnY87Cb6JjxHW6Y6bo9Z/c7X6vkk+01mwYDYNhmIDixjrH5N9yEtCCjMTYspQXZ0Ej0v11Mg3STvjsB9yMuo7pdCzvRnTTte5bP9iBBJH+0aAroPSn+OpThkoDveOnBXim0sZVqGNt9fKiLwWp4PQv1N50M6ETgQfwca1pCgDtZAJc0RGXa8XUKRNH6Tmy0HzoT+3rYP19mLekmnEFBYaxxNSMk3uh5Cq8/QgfOtDG+Vw9man2El64XcQ0A4DJnyoF9K9Dh5WPiVcnPRAytwEP4MEw6M34rHWNaMwPjOiKvRFy+FyARHb+M3tOBiHndRyDz2LxgenNEeMe04lmc99rhS6u8WXrwFvdCK3thcSqDq17bRG6LaYaxqx0rRw1fVD9t4l+p6F8yJUPhqZPC0UV6zpN0okfhIPY6unWGCg+JgUgbjMVF9HixkGZOT8BtP8VspzCnDXJx26LgHOdnECn/SKKpCbC8m1nLhD8OpHKNfXkxS17/7V3/lQSeS4fDwY0w80zoDhe/5YG7CuWqHdRpHBTO8gXsZdRe8HwvJjYVUILJP4Skd3MHSWaTZ9t1qmeX0N54n+W60qv0vL712+YDYkxz4Fg04hyT/NVTdlHyjh9m5NkwgkfH6FRL4oSq6CVsGH2qDwEo5mI1VnoVPsVZA4TMcwD6XRvWddRrHBXc7zAQZor96XA0u6+4q5tXUe7kMwFa8xzv0nAjFvssv7jEk+YYIaZwXDSe68yZ6A1KJQLMcw6HhD0jykyLYt4T9TRM4+URPaqmroDvjfPAIuIVATk6kwi0k+ZHWiis8hSyuCZ2pZp2hW4K+RXervry2LTKGIOjX9Sgkv5fTda+sV5Lrm8YTXaPggxsINMtkui63kuR24/S6jybDMfUmdZsbBlZOS0/0ymHrc44TgZxczexeI3XNQ53FMrWLi3bOyqqFxUv1/Ou/0eOofcUR2XyNvMGC9E9Th5NeQ0AwP8jUEte3syWfSv8PPezmAxHwRI/jNhCM5o24NY6sYsujmf75k1QyXHHLNUp7u+XxKLG9NkIWm+ms3ESSfxQhTepFPdFTX8WOGrhGetLb7QVqH2WdhJ/YdDViglrjqNUVU9sTvWLQ+ozLRkB7u33HxTyBcdZ5KHxN2fEkeXW8Ia0VS4agJ3oy6sFrUURAr/SyhWPkwMnFS6G/Cqvo7ZZlx9tvobJ1KuCJXqcVn0iz22Qw50q+Rd2GRtDvbfTBhRiryp8+HaEwV0U90V2tubTp3SoncECslWbZO8Lo4bbBXI13uAqf/pw2vCLa44keETAvXgEE8jKaG2G8wd71Q61zV1xrIIvr6O3WYZ2mjgW9w0wdV34iTG+Ri0hw7e1mT3JgAb3dZnqS29egb9HtsQqWVFxiS3FznySFrAOrpjTLVWzJnyBsdg2OdmlVuIGdbnolGR8iIOCJHgGsQFGhB3aTA8QKNKAGETm5g7RdYF1y55JmM+gI87J1Gi/YhYAnehcU/k9VEOhc220RSa43DbELesNMhckkue6R96EMBDzRywDNJykTAe3tlsfzTH1xhBw20qU1S0eYTyKk8aJ7IeCJvhcg/rRCCHR6u73O3M+1LkFhHV1ax3PZp6+s03jBkgh4opeExV+MFYG89N/l7XaKdb4KXxb81hvVOus0XjAQAbvezsDkPsIjEIKA9nbr4NpuQBSSf8xZ52exJfckD4HXNtoT3RYpLxcdAb23XXuB5MMiJG5jSz6O661vjJCmsqI2myx2sLuwdiG0bP/qHkflKAyKI5tU5ZGTs9mSL43kCKO4FdcAXI6R6r9EYWGzgYPCkJrpLOFl+xbdrnbMW/ZooJvFvpPJrkx3pXJyGgmuV2m193bLcIGJLKYljuS6FhQXlg4LwnnwrTI0TCz2+GbRn0SnG/Ol/r5FNyK0K1Kw3kLsNe73diu3dWzhDCy94WISwg56kYXfpHFq2iKD6O2WY5Z9ImS7kL5xC9CGw0iWCMliEu3gOL0Jp0b1Fx/kek+/gw0l9qbd7/AemMP+hZXc3jJsOzBDVhZRDdzutJ0jGIIHePQISbHeEz0EoUJ0A74iqDv53wRoXwL+pMWz36bEeGQUHmZGc+PJzDKXDsyjZD9L6aLYbOI7u3hSg98bWOajxnIV1rB+RxllBAMZvxj/GKXiiYw2X2+Nf3W3gX2C2sTXN91z7IMJgRVyEKOnm0QcjlvqrO6CpZ7o9rX3uL1onUpu5+xw4faFaQw98CzN2u6gaRv5KfGKJ7ptzWW5yAHgVxY14dXA3om0hglqPd/q7nfQvPk4T231RLetOaV0W3UJK7uuduG0hacgN54LNCpsipTGJeFsYbbdcodUXsyFrwtTej3Ro9Sa9tTK4Dwm+TFKsrqR1au9CO5Jrb1K7eRr8BQ+zFyYRbcYh3OnGt1AMXiiR70rJ6rP2bKfysp+gUcNxoKiKlxl+Sb29Gts0hr4GqzXmyVzbqeJesgtWUG/USmOYDRxhuDpqmuIzxO9nGpqVBu40MRldNUcweR3E1i93PAGHkkjfvX10a1eVrckdH7p7NNIHhnKqfM90xRsVHeT7ENo5yxGvc3fdTxq0UfxL8v9gUcrj5n0XhjCe3NRsSUvqv0/MoYC4VWDRLoAAAAASUVORK5CYII=" style="max-width:125px;margin-top:  28px;">
+					</a>
 				</div>
-				<div id="sn-bd">
-					<b class="sn-edge"></b>
-					<div class="sn-container">
-						<p class="sn-back-home"><i class="mui-global-iconfont">󰄫</i>
-							<a href="//www.tmall.com/">天猫首页</a>
-						</p>
-						<p id="login-info" class="sn-login-info"><span class="sn-welcome-info">                                <span>Hi，</span>
-							<a target="_top" class="j_Username j_UserNick sn-user-nick" href="//vip.tmall.com?t=1556619535336" title="飞离世界到世界">飞离世界到世界</a>
-							<a class="j_Identity sn-identity hidden" target="_top"></a>
-							<a title="会员中心" class="j_MemberLevel sn-member-level sn-member-level-normal" href="//vip.tmall.com?t=1556619535336" target="_top"></a>
-							<a class="j_Point sn-point" target="_top" href="//vip.tmall.com/point/all?from=top&amp;scm=1027.1.1.4">积分<em class="j_PointValue sn-point-value">489</em> </a>
-							</span> <span class="j_Message sn-message-cont">                            <span class="j_MessageCont">                                <a target="_top" href="//vip.tmall.com/message/tmaller?spm=3.1000473.0.4.equqSK&amp;from=messagebox&amp;scm=1027.1.1.5" class="j_MessageText sn-all-msg menu-hd">消息<em class="j_MessageNum sn-msg-num">0</em>                                </a>                            </span> </span> <span class="sn-msg-box j_MesssageBox hidden">                            <i class="sn-msg-hd"></i>                            <span class="sn-msg-bd">                                <a href="#" class="j_MessageTitle sn-msg-title">加入积分聚乐部</a>                                <b class="j_CloseMessage sn-msg-close">×</b>                            </span> </span> <span class="sn-welcome-info">                            <a class="sn-logout" target="_top" href="//login.taobao.com/member/logout.jhtml?redirecturl1=%2F%2Flogin.tmall.com%2F%3Fredirecturl1%3Dhttps%253A%252F%252Fbuy.tmall.com%252Forder%252Fconfirm_order.htm%253Fspm%253Da1z0d.6639537.0.0.undefined" id="J_Logout">退出</a>                        </span></p>
-						<ul class="sn-quick-menu">
-							<li class="sn-mytaobao menu-item j_MyTaobao">
-								<div class="sn-menu">
-									<a class="menu-hd" href="//i.taobao.com/my_taobao.htm" target="_top" rel="nofollow" tabindex="0" aria-haspopup="true" aria-expanded="false">我的淘宝<b></b></a>
-									<div class="menu-bd" role="menu" aria-hidden="true" id="menu-2">
-										<div class="menu-bd-panel" id="myTaobaoPanel">
-											<a href="//trade.taobao.com/trade/itemlist/list_bought_items.htm?t=20110530" target="_top" rel="nofollow">已买到的宝贝</a>
-											<a href="//trade.taobao.com/trade/itemlist/list_sold_items.htm?t=20110530" target="_top" rel="nofollow">已卖出的宝贝</a>
-										</div>
-									</div>
-								</div>
+				<ul class="layout-header-bread">
+					<li class="layout-header-bread-block ">购物车</li>
+					<li class="layout-header-bread-block active">确认订单</li>
+					<li class="layout-header-bread-block ">在线支付</li>
+					<li class="layout-header-bread-block ">完成</li>
+				</ul>
+				<ul class="layout-header-right">
+					<li class="layout-header-right-item">
+						<a class="layout-header-right-link" href="//ordercenter.meizu.com/list/index.html" target="_blank" data-mdesc="购物车页头-我的订单" data-mtype="store_cart_yt_order" data-bh="click_store_cart_yt_order">我的订单</a>
+					</li>
+					<li class="layout-header-right-item signout">
+						<a class="layout-header-right-link" data-mdesc="购物车页头-登录" data-mtype="store_cart_yt_login" data-bh="click_store_cart_yt_login" href="javascript:window.location.href='https://login.flyme.cn/vCodeLogin?sid=unionlogin&amp;service=store&amp;autodirct=true&amp;useruri=http://store.meizu.com/member/login.htm?useruri='+ encodeURIComponent(encodeURIComponent(window.location.href));">登录</a>
+					</li>
+					<li class="layout-header-right-item signout">
+						<a class="layout-header-right-link" data-mdesc="购物车页头-注册" data-mtype="store_cart_yt_register" data-bh="click_store_cart_yt_register" target="_blank" href="//member.meizu.com/register">注册</a>
+					</li>
+					<li class="layout-member signin">
+						<a class="layout-member-link" target="_blank" href="http://me.meizu.com/member/index"><span class="layout-member-username" id="topbarUser">用户607640492</span>的商城<i class="layout-member-triangle"></i></a>
+						<ul class="layout-member-downmenu">
+							<li class="layout-member-downmenu-item">
+								<a class="layout-member-downmenu-link" data-mdesc="我的商城下拉框1" data-mtype="store_index_yt_my_1" data-bh="click_store_index_yt_my_1" target="_blank" href="//me.meizu.com/member/address/index">地址管理</a>
 							</li>
-							<li class="sn-seller-center hidden j_SellerCenter">
-								<a target="_top" href="//mai.taobao.com/seller_admin.htm">商家中心</a>
+							<li class="layout-member-downmenu-item">
+								<a class="layout-member-downmenu-link" data-mdesc="页头-收藏" data-mtype="store_index_yt_collect" data-bh="click_store_index_yt_collect" target="_blank" href="//me.meizu.com/member/favorite/index">我的收藏</a>
 							</li>
-							<li class="sn-cart mini-cart menu"><i class="mui-global-iconfont">󰅈</i>
-								<a class="sn-cart-link" href="//cart.tmall.com/cart/myCart.htm?from=btop" target="_top" rel="nofollow" id="mc-menu-hd">购物车<span class="mc-count mc-pt3">7</span>件</a>
+							<li class="layout-member-downmenu-item">
+								<a class="layout-member-downmenu-link" data-mdesc="我的商城下拉框2" data-mtype="store_index_yt_my_2" data-bh="click_store_index_yt_my_2" target="_blank" href="//mcycle.meizu.com/page/balance_log">我的回购金</a>
 							</li>
-							<li class="sn-favorite menu-item">
-								<div class="sn-menu">
-									<a class="menu-hd" href="//shoucang.taobao.com/shop_collect_list.htm?scjjc=c1" target="_top" rel="nofollow" tabindex="0" aria-haspopup="true" aria-expanded="false">收藏夹<b></b></a>
-
-									<div class="menu-bd" role="menu" aria-hidden="true" id="menu-4">
-										<div class="menu-bd-panel">
-											<a href="//shoucang.taobao.com/item_collect.htm" target="_top" rel="nofollow">收藏的宝贝</a>
-											<a href="//shoucang.taobao.com/shop_collect_list.htm" target="_top" rel="nofollow">收藏的店铺</a>
-										</div>
-									</div>
-								</div>
+							<li class="layout-member-downmenu-item">
+								<a class="layout-member-downmenu-link" data-mdesc="我的商城下拉框3" data-mtype="store_index_yt_my_3" data-bh="click_store_index_yt_my_3" target="_blank" href="//me.meizu.com/member/advice/index">问题反馈</a>
 							</li>
-							<li class="sn-separator"></li>
-							<li class="sn-mobile">
-								<i class="mui-global-iconfont">㑈</i>
-								<a title="天猫无线" target="_top" class="sn-mobile-link" href="//pages.tmall.com/wow/portal/act/app-download?scm=1027.1.1.1">手机版</a>
-							</li>
-							<li class="sn-home">
-								<a href="//www.taobao.com/">淘宝网</a>
-							</li>
-							<li class="sn-seller menu-item">
-								<div class="sn-menu J_DirectPromo">
-									<a class="menu-hd" href="//mai.taobao.com" target="_top">商家支持<b></b></a>
-									<div class="menu-bd sn-seller-lazy">
-										<ul>
-											<li>
-												<h3>商家：</h3>
-												<a target="_top" href="//mai.taobao.com/">商家中心</a>
-												<a class="sitemap-right" target="_top" href="//guize.tmall.com/?acm=lb-tms-1104633-90536.1003.4.268545&amp;scm=1003.4.lb-tms-1104633-90536.OTHER_6_268545">天猫规则</a>
-												<a class="sitemap-right" target="_top" href="//zhaoshang.tmall.com/?acm=lb-tms-1104633-90536.1003.4.268545&amp;scm=1003.4.lb-tms-1104633-90536.OTHER_2_268545">商家入驻</a>
-												<a target="_top" href="//fw.tmall.com/?acm=lb-tms-1104633-90536.1003.4.268545&amp;scm=1003.4.lb-tms-1104633-90536.OTHER_3_268545">运营服务</a>
-												<a class="sitemap-right" target="_top" href="//www.tmall.com/wow/seller/act/tmallpinkong">商家品控</a>
-												<a target="_top" href="//fuwu.tmall.com/?acm=lb-tms-1104633-90536.1003.4.268545&amp;scm=1003.4.lb-tms-1104633-90536.OTHER_5_268545">商家工具</a>
-												<a target="_top" href="//zhiku.tmall.com">天猫智库</a>
-												<a class="sitemap-right" target="_top" href="//maowo.tmall.com/?acm=lb-tms-1104633-90536.1003.4.268545&amp;scm=1003.4.lb-tms-1104633-90536.OTHER_8_268545">喵言喵语</a>
-											</li>
-											<li>
-												<h3>帮助：</h3>
-												<a target="_top" href="//helpcenter.tmall.com/index?from=high">帮助中心</a>
-												<a target="_top" href="//infob.taobao.com/help">问商友</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li class="sn-sitemap">
-								<div class="sn-menu">
-									<h3 class="menu-hd"><i class="mui-global-iconfont"></i><span>网站导航</span><b></b></h3>
-									<div class="menu-bd sn-sitemap-lazy sn-sitemap-bd" data-spm="a2228l4">
-									</div>
-								</div>
+							<li class="layout-member-downmenu-item">
+								<a class="layout-member-downmenu-link exit" data-mdesc="我的商城下拉框4" data-mtype="store_index_yt_my_4" data-bh="click_store_index_yt_my_4" href="javascript:window.location.href='http://store.meizu.com/member/logout.htm?useruri='+ encodeURIComponent(encodeURIComponent(window.location.href));">退出</a>
 							</li>
 						</ul>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="order">
+			<div class="mzcontainer">
+				<div class="order-address" id="addressModule">
+					<div class="order-address-title">
+						收货人信息
+						<div class="order-address-title-tips" id="orderAddressHasOldTips">
+							<i class="order-address-tips-icon"></i>因配送地址库升级，部分地址需升级后方可使用！
+						</div>
+					</div>
+					<ul class="order-address-list clearfix" id="addressList" style="height: 174px;">
+						<li class="order-address-checkbox checked" data-mdesc="收货人信息" data-mtype="click_store_se_adr" data-bh="click_store_se_adr">
+							<div class="order-address-checkbox-top">
+								<div class="order-address-checkbox-name" title="张三">张三</div>
+								<div class="order-address-checkbox-phone">13652145236</div>
+							</div>
+							<div class="order-address-checkbox-content">四川省凉山彝族自治州西昌市北城街道西昌学院北校区</div>
+							<div class="order-address-checkbox-checked">
+								<div class="order-address-checkbox-tick"></div>
+							</div>
+
+							<div class="order-address-checkbox-ctrl">
+								<div class="order-address-checkbox-delete"></div>
+								<div class="order-address-checkbox-edit"></div>
+							</div>
+
+						</li>
+						<li class="order-address-checkbox" data-mdesc="收货人信息" data-mtype="click_store_se_adr" data-bh="click_store_se_adr">
+							<div class="order-address-checkbox-top">
+								<div class="order-address-checkbox-name" title="李四">李四</div>
+								<div class="order-address-checkbox-phone">23423411342</div>
+							</div>
+							<div class="order-address-checkbox-content">四川省广安市前锋区前锋镇纤细地址</div>
+							<div class="order-address-checkbox-checked">
+								<div class="order-address-checkbox-tick"></div>
+							</div>
+
+							<div class="order-address-checkbox-ctrl">
+								<div class="order-address-checkbox-delete"></div>
+								<div class="order-address-checkbox-edit"></div>
+							</div>
+
+						</li>
+						<li class="order-address-checkbox add">
+							<div class="order-add-icon"></div>
+							<div class="order-address-add-text">添加新地址</div>
+						</li>
+					</ul>
+					<div class="order-address-bottom">
+						<div class="order-address-more" id="orderAddressMore">
+							<p class="order-address-more-text">点击显示更多地址</p>
+							<i class="order-address-triangle"></i>
+						</div>
+					</div>
+					<div class="mz-loading-mask" style="width: 1240px; height: 246px; display: none;">
+						<div class="mz-loading spinner">
+							<div class="mz-bounce mz-bounce1"></div>
+							<div class="mz-bounce mz-bounce2"></div>
+							<div class="mz-bounce mz-bounce3"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mzcontainer order-product">
+					<div class="order-product-title">确认订单信息</div>
+					<div class="order-product-list" id="orderProductList">
+						<table cellpadding="0" cellspacing="0" class="order-product-table">
+							<thead>
+								<tr>
+									<th class="order-product-table-name">
+										<div class="order-product-supplier">
+											供应商：<span class="order-product-supplier-name">魅族</span>
+											<!--<div class="order-product-supplier-tips">由“魅族”负责发货，并提供售后服务</div>-->
+										</div>
+									</th>
+									<th class="order-product-table-price">单价</th>
+									<th class="order-product-table-num">数量</th>
+									<th class="order-product-table-total">小计</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="order-product-table-name">
+										<a target="_blank" class="order-product-link" href="//detail.meizu.com/item/meizu_power_bank_3.html" data-mdesc="确认订单信息" data-mtype="click_store_se_ord" data-bh="click_store_se_ord">
+											<img class="order-product-image" data-original="//openfile.meizu.com/group1/M00/06/CC/Cgbj0VvJjKeATLxsAAF7_uDseks390.png@120x120.jpg" src="//openfile.meizu.com/group1/M00/06/CC/Cgbj0VvJjKeATLxsAAF7_uDseks390.png@120x120.jpg" style="display: inline;">
+										</a>
+										<div class="order-product-name">
+											<a target="_blank" class="order-product-link" href="//detail.meizu.com/item/meizu_power_bank_3.html" data-mdesc="确认订单信息" data-mtype="click_store_se_ord" data-bh="click_store_se_ord">
+												<p class="order-product-name-item item-name">魅族移动电源3</p>
+												<p class="order-product-name-item cspu-desc">简约白 双向快充</p>
+
+											</a>
+										</div>
+									</td>
+									<td class="order-product-table-price">
+										<p>
+											<span class="order-product-price">79.00</span>
+
+										</p>
+
+									</td>
+									<td class="order-product-table-num">1</td>
+									<td class="order-product-table-total">
+										<p class="order-product-price red">79.00</p>
+									</td>
+
+								</tr>
+
+								<!-- 套餐 -->
+
+								<!-- 赠品 -->
+
+								<!-- 加价购商品 -->
+								<tr>
+									<td class="order-product-table-name">
+										<a target="_blank" class="order-product-link" href="//detail.meizu.com/item/meizu16x.html" data-mdesc="确认订单信息" data-mtype="click_store_se_ord" data-bh="click_store_se_ord">
+											<img class="order-product-image" data-original="//openfile.meizu.com/group1/M00/06/CC/Cgbj0VvINL-AGM20AAw4GirVtYA698.png@120x120.jpg" src="//openfile.meizu.com/group1/M00/06/CC/Cgbj0VvINL-AGM20AAw4GirVtYA698.png@120x120.jpg" style="display: inline;">
+										</a>
+										<div class="order-product-name">
+											<a target="_blank" class="order-product-link" href="//detail.meizu.com/item/meizu16x.html" data-mdesc="确认订单信息" data-mtype="click_store_se_ord" data-bh="click_store_se_ord">
+												<p class="order-product-name-item item-name">魅族 16 X</p>
+												<p class="order-product-name-item cspu-desc">全网通公开版 砚墨黑 6+64GB</p>
+
+											</a>
+										</div>
+									</td>
+									<td class="order-product-table-price">
+										<p>
+											<span class="order-product-price">1798.00</span>
+
+										</p>
+
+									</td>
+									<td class="order-product-table-num">1</td>
+									<td class="order-product-table-total">
+										<p class="order-product-price red">1798.00</p>
+									</td>
+
+								</tr>
+
+								<!-- 套餐 -->
+
+								<!-- 赠品 -->
+
+								<!-- 加价购商品 -->
+								<tr>
+									<td class="order-product-table-name">
+										<a target="_blank" class="order-product-link" href="//detail.meizu.com/item/meizunote9.html" data-mdesc="确认订单信息" data-mtype="click_store_se_ord" data-bh="click_store_se_ord">
+											<img class="order-product-image" data-original="//openfile.meizu.com/group1/M00/07/12/Cgbj0Vx_ZK6AaEObAAa1DJqn7us376.png@120x120.jpg" src="//openfile.meizu.com/group1/M00/07/12/Cgbj0Vx_ZK6AaEObAAa1DJqn7us376.png@120x120.jpg" style="display: inline;">
+										</a>
+										<div class="order-product-name">
+											<a target="_blank" class="order-product-link" href="//detail.meizu.com/item/meizunote9.html" data-mdesc="确认订单信息" data-mtype="click_store_se_ord" data-bh="click_store_se_ord">
+												<p class="order-product-name-item item-name">魅族 Note9</p>
+												<p class="order-product-name-item cspu-desc">全网通公开版 幻黑 4+64GB</p>
+
+											</a>
+										</div>
+									</td>
+									<td class="order-product-table-price">
+										<p>
+											<span class="order-product-price">1398.00</span>
+
+										</p>
+
+									</td>
+									<td class="order-product-table-num">1</td>
+									<td class="order-product-table-total">
+										<p class="order-product-price red">1398.00</p>
+									</td>
+
+								</tr>
+
+								<!-- 套餐 -->
+
+								<!-- 赠品 -->
+
+								<!-- 加价购商品 -->
+							</tbody>
+							<tfoot>
+								<tr class="order-product-footer">
+									<td colspan="3" class="order-product-info">
+
+										<div class="order-product-invoice clearfix">
+
+											<div class="order-product-invoice-type">
+												发票类型：电子发票
+												<div class="order-product-invoice-icon"></div>
+											</div>
+
+											<span class="order-product-invoice-edit">修改</span>
+											<div class="order-product-invoice-info">
+												<p>发票抬头：<span class="order-product-invoice-title">默认为收货人姓名</span>
+												</p>
+												<p class="order-product-company">纳税人识别号：<span class="order-product-invoice-identify"></span></p>
+												<p class="order-product-company">开户行及账号：<span class="order-product-invoice-bank"></span></p>
+											</div>
+										</div>
+
+									</td>
+									<td colspan="2" class="order-product-total">
+										合计：<span class="order-product-price red total-has-express-fee">3275.00</span>
+									</td>
+								</tr>
+								<tr class="order-product-remark">
+									<td colspan="5">
+										<span class="order-product-remark-title">备注：</span>
+										<textarea class="order-product-remark-input" maxlength="45"></textarea>
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+
+				<div class="mzcontainer order-invoice" id="orderInvoice">
+					<div class="order-invoice-header">发票信息</div>
+					<ul class="order-invoice-list" id="orderInvoiceList"></ul>
+				</div>
+
+				<div class="order-total clearfix" id="orderTotal">
+					<div class="order-total-pay">
+						<div class="order-total-pay-header">选择支付方式</div>
+						<div class="order-total-pay-content" id="payToolsContent">
+							<div class="order-total-pay-row clearfix">
+								<div class="order-total-pay-title">支付宝</div>
+								<ul class="order-total-pay-list clearfix">
+
+									<li class="order-total-pay-label alipay active" data-bh="click_store_pay_pm_alipay">
+										<div class="order-total-pay-radio"></div>
+										<div class="order-total-pay-img"></div>
+
+									</li>
+
+								</ul>
+
+							</div>
+
+							<div class="order-total-pay-row clearfix">
+								<div class="order-total-pay-title">微信支付</div>
+								<ul class="order-total-pay-list clearfix">
+
+									<li class="order-total-pay-label wechat" data-bh="click_store_pay_pm_wechat">
+										<div class="order-total-pay-radio"></div>
+										<div class="order-total-pay-img"></div>
+
+									</li>
+
+								</ul>
+
+							</div>
+
+							<div class="order-total-pay-row clearfix">
+								<div class="order-total-pay-title">网上银行</div>
+								<ul class="order-total-pay-list clearfix">
+
+									<li class="order-total-pay-label boc" data-bh="click_store_pay_pm_boc">
+										<div class="order-total-pay-radio"></div>
+										<div class="order-total-pay-img"></div>
+
+									</li>
+
+									<li class="order-total-pay-label ccb" data-bh="click_store_pay_pm_ccb">
+										<div class="order-total-pay-radio"></div>
+										<div class="order-total-pay-img"></div>
+
+									</li>
+
+									<li class="order-total-pay-label abc" data-bh="click_store_pay_pm_abc">
+										<div class="order-total-pay-radio"></div>
+										<div class="order-total-pay-img"></div>
+
+									</li>
+
+									<li class="order-total-pay-label icbc" data-bh="click_store_pay_pm_icbc">
+										<div class="order-total-pay-radio"></div>
+										<div class="order-total-pay-img"></div>
+
+									</li>
+
+									<li class="order-total-pay-label comm" data-bh="click_store_pay_pm_comm">
+										<div class="order-total-pay-radio"></div>
+										<div class="order-total-pay-img"></div>
+
+									</li>
+
+									<li class="order-total-pay-label cmb" data-bh="click_store_pay_pm_cmb">
+										<div class="order-total-pay-radio"></div>
+										<div class="order-total-pay-img"></div>
+
+									</li>
+
+									<li class="order-total-pay-label psbc" data-bh="click_store_pay_pm_psbc">
+										<div class="order-total-pay-radio"></div>
+										<div class="order-total-pay-img"></div>
+
+									</li>
+
+									<li class="order-total-pay-label cib" data-bh="click_store_pay_pm_cib">
+										<div class="order-total-pay-radio"></div>
+										<div class="order-total-pay-img"></div>
+
+									</li>
+
+									<li class="order-total-pay-label shbank" data-bh="click_store_pay_pm_shbank">
+										<div class="order-total-pay-radio"></div>
+										<div class="order-total-pay-img"></div>
+
+									</li>
+
+								</ul>
+
+								<table class="order-total-pay-banks-detail" cellspacing="0" cellpadding="0">
+									<thead>
+										<tr>
+											<th width="150px">银行名称</th>
+											<th width="400px">限额</th>
+											<th width="140px">支持卡种</th>
+											<th width="140px">客服电话</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+
+							</div>
+
+						</div>
+					</div>
+
+					<div class="order-total-content">
+						<div class="order-total-row">
+							总金额：
+							<div class="order-total-price" id="totalOrderPrice">3275.00</div>
+						</div>
+						<div class="order-total-row order-total-discount" id="totalCouponRow">
+							优惠券：
+							<div class="order-total-price sub">0.00</div>
+						</div>
+						<div class="order-total-row order-total-discount" id="totalRedRow">
+							红包：
+							<div class="order-total-price sub">0.00</div>
+						</div>
+						<div class="order-total-row order-total-discount" id="totalRepoRow" style="display: none;">
+							回购金：
+							<div class="order-total-price sub">0.00</div>
+						</div>
+						<div class="order-total-row order-total-discount" id="totalGiftRow">
+							礼品卡：
+							<div class="order-total-price sub">0.00</div>
+						</div>
+						<div class="order-total-row">
+							运费
+							<div class="order-total-price" id="totalExpressPrice">0.00</div>
+						</div>
+						<div class="order-total-line"></div>
+						<div class="order-total-row">
+							应付：
+							<div class="order-total-price total" id="totalPayPrice">3275.00</div>
+						</div>
+						<div class="order-total-row order-total-valid-row clearfix">
+							<div class="order-total-valid" id="validCode"></div>
+							<div class="mz-btn success" id="submitForm" data-mdesc="下单并支付" data-mtype="store_se_pay" data-bh="click_store_se_pay">下单并支付</div>
+							<div class="order-stock-tips-wrap" id="orderStockTips" style="display: block;">
+								<div class="order-stock-tips">该订单含付款减库存商品，支付完成后才会为您预留库存！</div>
+							</div>
+						</div>
+						<div class="order-total-row order-total-row-tips" id="totalTips"></div>
 					</div>
 				</div>
 			</div>
+		</div>
 
-			<div id="header" class=" header-order-app" data-spm="a2226n0">
-				<div class="headerLayout">
-					<div class="headerCon ">
-						<h1 id="mallLogo">
-  <span class="mlogo">
-   <a href="//www.tmall.com/" title="天猫Tmall.com"><s></s>天猫Tmall.com</a>
-   </span>
-  <span class="slogo">
- <a href=""></a>
- </span>
-</h1>
+		<!-- end content -->
 
-						<div class="header-extra">
-							<div class="stepbar-box">
-								<ol class="order-stepbar stepbar-5" id="stepbar_1" data-reactid=".3">
-									<li class="step-first" data-reactid=".3.$1">
-										<div class="step-done" data-reactid=".3.$1.0">
-											<div class="step-name" data-reactid=".3.$1.0.0">查看购物车</div>
-											<div class="step-no" data-reactid=".3.$1.0.1"></div>
-										</div>
-									</li>
-									<li class="" data-reactid=".3.$2">
-										<div class="" data-reactid=".3.$2.0">
-											<div class="step-name" data-reactid=".3.$2.0.0">拍下商品</div>
-											<div class="step-no" data-reactid=".3.$2.0.1">2</div>
-										</div>
-									</li>
-									<li class="" data-reactid=".3.$3">
-										<div class="" data-reactid=".3.$3.0">
-											<div class="step-name" data-reactid=".3.$3.0.0">付款到支付宝</div>
-											<div class="step-no" data-reactid=".3.$3.0.1">3</div>
-										</div>
-									</li>
-									<li class="" data-reactid=".3.$4">
-										<div class="" data-reactid=".3.$4.0">
-											<div class="step-name" data-reactid=".3.$4.0.0">确认收货</div>
-											<div class="step-no" data-reactid=".3.$4.0.1">4</div>
-										</div>
-									</li>
-									<li class="step-last" data-reactid=".3.$5">
-										<div class="" data-reactid=".3.$5.0">
-											<div class="step-name" data-reactid=".3.$5.0.0">评价</div>
-											<div class="step-no" data-reactid=".3.$5.0.1">5</div>
-										</div>
-									</li>
-								</ol>
+		<div class="mz-mask hide">
+			<div class="mz-dialog tips ">
+				<div class="mz-dialog-header">
+					<div class="mz-dialog-title">提示</div>
+					<div class="mz-dialog-close"></div>
+				</div>
+				<div class="mz-dialog-main">
+					<div class="mz-dialog-warp">
+
+						<div class="mz-dialog-content"></div>
+					</div>
+				</div>
+
+				<div class="mz-dialog-bottom">
+
+					<div class="mz-btn success">确定</div>
+
+				</div>
+
+			</div>
+		</div>
+		<div class="mz-mask hide">
+			<div class="mz-dialog dialog order-pay-dialog">
+				<div class="mz-dialog-header">
+					<div class="mz-dialog-title">请使用微信扫码完成支付</div>
+					<div class="mz-dialog-close hide"></div>
+				</div>
+				<div class="mz-dialog-main">
+					<div class="mz-dialog-warp">
+
+						<div class="mz-dialog-content">
+							<div class="order-pay-dialog-qrcode"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mz-dialog-bottom">
+
+				</div>
+
+			</div>
+		</div>
+		<div class="mz-mask hide">
+			<div class="mz-dialog tips ">
+				<div class="mz-dialog-header">
+					<div class="mz-dialog-title">提示</div>
+					<div class="mz-dialog-close"></div>
+				</div>
+				<div class="mz-dialog-main">
+					<div class="mz-dialog-warp">
+
+						<div class="mz-dialog-content"></div>
+					</div>
+				</div>
+
+				<div class="mz-dialog-bottom">
+
+					<div class="mz-btn success">确定</div>
+
+				</div>
+
+			</div>
+		</div>
+		<div class="mz-mask hide">
+			<div class="mz-dialog dialog address-adder" style="margin-left: -380px; margin-top: -181.5px;">
+				<div class="mz-dialog-header">
+					<div class="mz-dialog-title">添加新地址</div>
+					<div class="mz-dialog-close"></div>
+				</div>
+				<div class="mz-dialog-main">
+					<div class="mz-dialog-warp">
+
+						<div class="mz-dialog-content">
+							<div class="address-adder-content">
+								<div class="address-adder-row clearfix">
+									<div class="address-adder-title">收货人姓名<span class="address-adder-must">*</span></div>
+									<div class="mz-input-warp" data-tips=" "><input type="text" class="mz-input address-adder-name" placeholder="姓名长度不超过15个文字" value="" maxlength="15"></div>
+									<div class="address-adder-title">收货人手机号<span class="address-adder-must">*</span></div>
+									<div class="mz-input-warp" data-tips=" "><input type="text" class="mz-input address-adder-phone" placeholder="请输入11位手机号" value="" maxlength="11"></div>
+								</div>
+								<div class="address-adder-row clearfix">
+									<div class="address-adder-title">收货人地址<span class="address-adder-must">*</span></div>
+									<div class="mz-input-warp address-adder-select mz-address" data-tips=" ">
+										<div class="mz-selectmenu"><input type="text" readonly="readonly" tabindex="-1" class="mz-downmenu-input" placeholder="省份/直辖市"><input type="hidden" tabindex="-1" value="27304" name=""></div>
+										<div class="mz-selectmenu"><input type="text" readonly="readonly" tabindex="-1" class="mz-downmenu-input" placeholder="城市"><input type="hidden" tabindex="-1" value="29316" name=""></div>
+										<div class="mz-selectmenu"><input type="text" readonly="readonly" tabindex="-1" class="mz-downmenu-input" placeholder="区/县"><input type="hidden" tabindex="-1" value="29317" name=""></div>
+										<div class="mz-selectmenu"><input type="text" readonly="readonly" tabindex="-1" class="mz-downmenu-input" placeholder="乡镇/街道"><input type="hidden" tabindex="-1" value="29321" name=""></div>
+										<div class="mz-address-other mz-input-warp" name="" style="display: none;"><input type="text" class="mz-input mz-address-input" placeholder="请输入其他街道名称" maxlength="10"></div>
+									</div>
+								</div>
+								<div class="address-adder-row clearfix address-adder-other" style="display: none;">
+									<div class="address-adder-title">其他</div>
+								</div>
+								<div class="address-adder-row clearfix">
+									<div class="address-adder-title">详细地址<span class="address-adder-must">*</span></div>
+									<div class="mz-input-warp" data-tips=" ">
+										<input type="text" class="mz-input address-adder-detail" placeholder="请输入4-50个文字的详细地址，例如路名、门牌号" value="" maxlength="50" minlength="4">
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+
+				<div class="mz-dialog-bottom">
+
+					<div class="mz-btn success">确认</div>
+
+					<div class="mz-btn cancel">取消</div>
+
+				</div>
+
 			</div>
+		</div>
+		<div class="mz-downmenu" style="top: 484.969px; left: 728.5px; width: 118px; display: none;">
+			<ul class="mz-downmenu-list">
+				<li class="mz-downmenu-item">北京</li>
+				<li class="mz-downmenu-item">天津</li>
+				<li class="mz-downmenu-item">吉林省</li>
+				<li class="mz-downmenu-item">辽宁省</li>
+				<li class="mz-downmenu-item">浙江省</li>
+				<li class="mz-downmenu-item">福建省</li>
+				<li class="mz-downmenu-item">上海</li>
+				<li class="mz-downmenu-item">广东省</li>
+				<li class="mz-downmenu-item">海南省</li>
+				<li class="mz-downmenu-item">湖北省</li>
+				<li class="mz-downmenu-item">湖南省</li>
+				<li class="mz-downmenu-item">安徽省</li>
+				<li class="mz-downmenu-item">江苏省</li>
+				<li class="mz-downmenu-item">江西省</li>
+				<li class="mz-downmenu-item">四川省</li>
+				<li class="mz-downmenu-item">重庆</li>
+				<li class="mz-downmenu-item">云南省</li>
+				<li class="mz-downmenu-item">贵州省</li>
+				<li class="mz-downmenu-item">广西壮族自治区</li>
+				<li class="mz-downmenu-item">西藏自治区</li>
+				<li class="mz-downmenu-item">山东省</li>
+				<li class="mz-downmenu-item">河南省</li>
+				<li class="mz-downmenu-item">甘肃省</li>
+				<li class="mz-downmenu-item">河北省</li>
+				<li class="mz-downmenu-item">内蒙古自治区</li>
+				<li class="mz-downmenu-item">宁夏回族自治区</li>
+				<li class="mz-downmenu-item">青海省</li>
+				<li class="mz-downmenu-item">山西省</li>
+				<li class="mz-downmenu-item">陕西省</li>
+				<li class="mz-downmenu-item">新疆维吾尔自治区</li>
+				<li class="mz-downmenu-item">黑龙江省</li>
+			</ul>
+		</div>
+		<div class="mz-downmenu" style="top: 484.969px; left: 858.5px; width: 118px; display: none;">
+			<ul class="mz-downmenu-list">
+				<li class="mz-downmenu-item">成都市</li>
+				<li class="mz-downmenu-item">眉山市</li>
+				<li class="mz-downmenu-item">资阳市</li>
+				<li class="mz-downmenu-item">攀枝花市</li>
+				<li class="mz-downmenu-item">自贡市</li>
+				<li class="mz-downmenu-item">绵阳市</li>
+				<li class="mz-downmenu-item">南充市</li>
+				<li class="mz-downmenu-item">达州市</li>
+				<li class="mz-downmenu-item">遂宁市</li>
+				<li class="mz-downmenu-item">广安市</li>
+				<li class="mz-downmenu-item">巴中市</li>
+				<li class="mz-downmenu-item">泸州市</li>
+				<li class="mz-downmenu-item">宜宾市</li>
+				<li class="mz-downmenu-item">内江市</li>
+				<li class="mz-downmenu-item">乐山市</li>
+				<li class="mz-downmenu-item">凉山彝族自治州</li>
+				<li class="mz-downmenu-item">雅安市</li>
+				<li class="mz-downmenu-item">甘孜藏族自治州</li>
+				<li class="mz-downmenu-item">阿坝藏族羌族自治州</li>
+				<li class="mz-downmenu-item">德阳市</li>
+				<li class="mz-downmenu-item">广元市</li>
+			</ul>
+		</div>
+		<div class="mz-downmenu" style="top: 484.969px; left: 988.5px; width: 118px; display: none;">
+			<ul class="mz-downmenu-list">
+				<li class="mz-downmenu-item">前锋区</li>
+				<li class="mz-downmenu-item">广安区</li>
+				<li class="mz-downmenu-item">岳池县</li>
+				<li class="mz-downmenu-item">武胜县</li>
+				<li class="mz-downmenu-item">邻水县</li>
+				<li class="mz-downmenu-item">华蓥市</li>
+			</ul>
+		</div>
+		<div class="mz-downmenu" style="top: 484.969px; left: 1118.5px; width: 118px; display: none;">
+			<ul class="mz-downmenu-list">
+				<li class="mz-downmenu-item">奎阁街道</li>
+				<li class="mz-downmenu-item">观阁镇</li>
+				<li class="mz-downmenu-item">广兴镇</li>
+				<li class="mz-downmenu-item">前锋镇</li>
+				<li class="mz-downmenu-item">桂兴镇</li>
+				<li class="mz-downmenu-item">代市镇</li>
+				<li class="mz-downmenu-item">观塘镇</li>
+				<li class="mz-downmenu-item">护安镇</li>
+				<li class="mz-downmenu-item">光辉乡</li>
+				<li class="mz-downmenu-item">龙滩乡</li>
+				<li class="mz-downmenu-item">小井乡</li>
+				<li class="mz-downmenu-item">新桥乡</li>
+				<li class="mz-downmenu-item">虎城乡</li>
+				<li class="mz-downmenu-item">其他</li>
+			</ul>
+		</div>
+		<div class="mz-mask hide">
+			<div class="mz-dialog tips ">
+				<div class="mz-dialog-header">
+					<div class="mz-dialog-title">提示</div>
+					<div class="mz-dialog-close"></div>
+				</div>
+				<div class="mz-dialog-main">
+					<div class="mz-dialog-warp">
 
-			<div id="content">
-
-				<div class="jet" id="App">
-					<div data-reactid=".0" class="page page-main">
-						<div id="confirmOrder_1" class="order-confirmOrder" data="[object Object]" data-reactid=".0.$confirmOrder_1">
-							<div data-reactid=".0.$confirmOrder_1.$stepbar_1"></div>
-							<div class="order-address " id="address_1" data-reactid=".0.$confirmOrder_1.$address_1">
-								<h2 data-reactid=".0.$confirmOrder_1.$address_1.0">选择收货地址</h2>
-								<div class="list" data-reactid=".0.$confirmOrder_1.$address_1.3">
-									<div class="addr suggest-address addr-cur addr-def" data-id="5748656354" data-reactid=".0.$confirmOrder_1.$address_1.3.$0">
-										<div class="inner" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0">
-											<div class="addr-hd" title="四川 凉山 (蔡运强收)" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0.0"><span class="prov" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0.0.0">四川</span><span class="city" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0.0.1">凉山</span><span data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0.0.2">（</span><span class="name" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0.0.3">蔡运强</span><span data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0.0.4"> 收）</span></div>
-											<div class="addr-bd" title="西昌安宁 西昌学院北校区" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0.1"><span class="dist" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0.1.1">西昌</span><span class="town" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0.1.2">安宁</span><span class="addr4tip" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0.1.3"></span><span class="street" data-street="西昌学院北校区" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0.1.4">西昌学院北校区</span><span class="phone" style="display:inline;" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0.1.5">18892892114</span><span class="last" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0.1.6">&nbsp;</span></div>
-											<div class="addr-toolbar" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0.2">
-												<a title="修改地址" class="modify" data-id="5748656354" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.0.2.0">修改</a>
-											</div>
-										</div>
-										<div class="curMarker" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.2"></div>
-										<div class="setDefault" title="设置当前地址为默认" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.3">设为默认</div>
-										<div class="defaultTip" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.4">默认地址</div>
-										<div class="floater" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.5"></div>
-										<div class="option" data-reactid=".0.$confirmOrder_1.$address_1.3.$0.6"></div>
-									</div>
-									<div class="addr suggest-address" data-id="6947512564" data-reactid=".0.$confirmOrder_1.$address_1.3.$2">
-										<div class="inner" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.0">
-											<div class="addr-hd" title="四川 广安 (蔡运强收)" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.0.0"><span class="prov" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.0.0.0">四川</span><span class="city" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.0.0.1">广安</span><span data-reactid=".0.$confirmOrder_1.$address_1.3.$2.0.0.2">（</span><span class="name" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.0.0.3">蔡运强</span><span data-reactid=".0.$confirmOrder_1.$address_1.3.$2.0.0.4"> 收）</span></div>
-											<div class="addr-bd" title="前锋大佛寺 前锋镇 前锋火车站邮政局" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.0.1"><span class="dist" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.0.1.1">前锋</span><span class="town" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.0.1.2">大佛寺</span><span class="addr4tip" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.0.1.3"></span><span class="street" data-street="前锋镇 前锋火车站邮政局" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.0.1.4">前锋镇 前锋火车站邮政局</span><span class="phone" style="display:inline;" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.0.1.5">18892892114</span><span class="last" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.0.1.6">&nbsp;</span></div><span data-reactid=".0.$confirmOrder_1.$address_1.3.$2.0.2"></span></div>
-										<div class="curMarker" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.2"></div>
-										<div class="setDefault" title="设置当前地址为默认" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.3">设为默认</div>
-										<div class="defaultTip" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.4">默认地址</div>
-										<div class="floater" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.5"></div>
-										<div class="option" data-reactid=".0.$confirmOrder_1.$address_1.3.$2.6"></div>
-									</div>
-								</div>
-								<div class="control" data-reactid=".0.$confirmOrder_1.$address_1.6">
-									<a class="manageAddr" href="//member1.taobao.com/member/fresh/deliver_address.htm" data-reactid=".0.$confirmOrder_1.$address_1.6.0">管理收货地址</a><input class="addAddr" type="button" value="使用新地址" data-reactid=".0.$confirmOrder_1.$address_1.6.2"></div>
-							</div>
-							<div class="order-orderDesc" id="orderDesc_0" data-reactid=".0.$confirmOrder_1.$orderDesc_0">
-								<h2 class="buy-th-title" data-reactid=".0.$confirmOrder_1.$orderDesc_0.0">确认订单信息</h2>
-								<div class="buy-th buy-th-column-6" data-reactid=".0.$confirmOrder_1.$orderDesc_0.1">
-									<div class="buy-td td-0" data-reactid=".0.$confirmOrder_1.$orderDesc_0.1.$0">店铺宝贝</div>
-									<div class="buy-td td-1" data-reactid=".0.$confirmOrder_1.$orderDesc_0.1.$1">商品属性</div>
-									<div class="buy-td td-2" data-reactid=".0.$confirmOrder_1.$orderDesc_0.1.$2">单价</div>
-									<div class="buy-td td-3" data-reactid=".0.$confirmOrder_1.$orderDesc_0.1.$3">数量</div>
-									<div class="buy-td td-4" data-reactid=".0.$confirmOrder_1.$orderDesc_0.1.$4">优惠方式</div>
-									<div class="buy-td td-5" data-reactid=".0.$confirmOrder_1.$orderDesc_0.1.$5">小计</div>
-								</div>
-							</div>
-							<div id="order_116d42ea015c0ede771050a5addc2f77" class="order-order" data="[object Object]" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77">
-								<div class="order-orderInfo" id="orderInfo_116d42ea015c0ede771050a5addc2f77" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$orderInfo_116d42ea015c0ede771050a5addc2f77"><img src="//gw.alicdn.com/tfs/TB1CzD7SXXXXXXJaXXXXXXXXXXX-32-32.png" class="shopIcon" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$orderInfo_116d42ea015c0ede771050a5addc2f77.0:$shopIcon"><span class="shop-name" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$orderInfo_116d42ea015c0ede771050a5addc2f77.0:$title-name">店铺:&nbsp;</span>
-									<a class="shop-url1" href="//store.taobao.com/shop/view_shop.htm?shop_id=128573071" target="_blank" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$orderInfo_116d42ea015c0ede771050a5addc2f77.0:$title-url1">苏宁易购官方旗舰店</a><span class="ww-light ww-small" data-encode="true" data-nick="苏宁易购官方旗舰店" data-display="inline" data-icon="small" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$orderInfo_116d42ea015c0ede771050a5addc2f77.2"></span></div>
-								<div class="order-item order-item-column-4" id="item_0adbe64d4738c4bc3d603c52850da318" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318">
-									<div class="order-itemInfo" id="itemInfo_0adbe64d4738c4bc3d603c52850da318" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318">
-										<div class="info-detail info-cell" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0">
-											<div class="info-cell" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0.0">
-												<a class="info-img" href="//detail.tmall.com/item.htm?id=580232053964" target="_blank" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0.0.0"><img class="info-img" src="//img.alicdn.com/imgextra/i2/2616970884/O1CN015gbNBJ1IOucLDH3VI_!!0-item_pic.jpg_100x100q90.jpg" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0.0.0.0"></a>
-											</div>
-											<div class="info-cell info-msg" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0.1">
-												<a href="//detail.tmall.com/item.htm?id=580232053964" class="info-title" target="_blank" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0.1.0">【五一狂欢价】【苏宁正品】2018新款 Apple/苹果 MacBook Pro 13.3英寸四核i5 512G 轻薄便携笔记本电脑Touch Bar</a>
-												<div class="info-icon-list" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0.1.1">
-													<div data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0.1.1.0">
-														<a class="icon-main" title="" target="_blank" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0.1.1.0.$0"><img src="//img.alicdn.com/bao/uploaded/TB1nyj9SH2pK1RjSZFswu1NlXXa.png" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0.1.1.0.$0.0"></a>
-														<a class="icon-main" title="消费者保障服务，卖家承诺7天退换" href="//pages.tmall.com/wow/seller/act/seven-day" target="_blank" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0.1.1.0.$1"><img src="//img.alicdn.com/tps/i3/T1Vyl6FCBlXXaSQP_X-16-16.png" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0.1.1.0.$1.0"></a>
-														<a class="icon-main" title="消费者保障服务，卖家承诺如实描述" href="//www.taobao.com/go/act/315/xfzbz_rsms.php?ad_id=&amp;am_id=130011830696bce9eda3&amp;cm_id=&amp;pm_id=" target="_blank" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0.1.1.0.$2"><img src="//img.alicdn.com/tps/i4/T1BCidFrNlXXaSQP_X-16-16.png" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0.1.1.0.$2.0"></a>
-														<a class="icon-main" title="支持信用卡支付" target="_blank" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0.1.1.0.$3"><img src="//assets.alicdn.com/sys/common/icon/trade/xcard.png" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.0.1.1.0.$3.0"></a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="info-sku info-cell" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.1">
-											<p data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.1.$0"><span class="hd" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.1.$0.0"><span data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.1.$0.0.0">颜色分类</span><span data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.1.$0.0.1">：</span></span><span class="bd" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.1.$0.1">银色</span></p>
-											<p data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.1.$1"><span class="hd" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.1.$1.0"><span data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.1.$1.0.0">套餐类型</span><span data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.1.$1.0.1">：</span></span><span class="bd" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.1.$1.1">官方标配</span></p>
-										</div>
-										<div class="info-price info-cell" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemInfo_0adbe64d4738c4bc3d603c52850da318.2">13888.00</div>
-									</div>
-									<div class="order-quantity" id="quantity_0adbe64d4738c4bc3d603c52850da318" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$quantity_0adbe64d4738c4bc3d603c52850da318"><span data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$quantity_0adbe64d4738c4bc3d603c52850da318.0">1</span><span data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$quantity_0adbe64d4738c4bc3d603c52850da318.1"></span><span data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$quantity_0adbe64d4738c4bc3d603c52850da318.2"></span></div>
-									<div class="order-promotion item-promotion" id="promotion_0adbe64d4738c4bc3d603c52850da318" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$promotion_0adbe64d4738c4bc3d603c52850da318">
-										<div class="item-promotion-selecter" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$promotion_0adbe64d4738c4bc3d603c52850da318.1"><span data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$promotion_0adbe64d4738c4bc3d603c52850da318.1.0">五一狂欢价</span><span class="widget-tips-box" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$promotion_0adbe64d4738c4bc3d603c52850da318.1.1"><img src="//img.alicdn.com/tps/TB1QFFkMXXXXXcNXFXXXXXXXXXX-32-32.png" class="wtip-icon" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$promotion_0adbe64d4738c4bc3d603c52850da318.1.1.0"><div class="wtip-msg-box" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$promotion_0adbe64d4738c4bc3d603c52850da318.1.1.2"><div class="wtip-arrow-icon" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$promotion_0adbe64d4738c4bc3d603c52850da318.1.1.2.0"></div><ins class="wtip-msg-icon" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$promotion_0adbe64d4738c4bc3d603c52850da318.1.1.2.1"></ins><div class="wtip-msg" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$promotion_0adbe64d4738c4bc3d603c52850da318.1.1.2.2"><ul><li>五一狂欢价：包邮</li></ul></div></div></span>
-											<div class="item-promotion-gift" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$promotion_0adbe64d4738c4bc3d603c52850da318.1.2"></div>
-										</div>
-									</div>
-									<div class="order-itemPay" id="itemPay_0adbe64d4738c4bc3d603c52850da318" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemPay_0adbe64d4738c4bc3d603c52850da318"><span class="simple-price" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$itemPay_0adbe64d4738c4bc3d603c52850da318.0">13888.00</span></div>
-									<div class="seperator" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$item_0adbe64d4738c4bc3d603c52850da318.$5"></div>
-								</div>
-								<div class="orderPay" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$orderPay_116d42ea015c0ede771050a5addc2f77"><span data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$orderPay_116d42ea015c0ede771050a5addc2f77.0">店铺合计</span><span data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$orderPay_116d42ea015c0ede771050a5addc2f77.1">(含运费)</span><span class="price g_price" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$orderPay_116d42ea015c0ede771050a5addc2f77.2"><span data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$orderPay_116d42ea015c0ede771050a5addc2f77.2.0">￥</span><em class="style-middle-bold-red J_ShopTotal" data-reactid=".0.$confirmOrder_1.$order_116d42ea015c0ede771050a5addc2f77.$orderPay_116d42ea015c0ede771050a5addc2f77.2.1">13888.00</em></span>
-								</div>
-							</div>
-							<div id="order_402d891820316caed9d6c49643eabd34" class="order-order" data="[object Object]" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34">
-								<div class="order-orderInfo" id="orderInfo_402d891820316caed9d6c49643eabd34" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$orderInfo_402d891820316caed9d6c49643eabd34"><img src="//gw.alicdn.com/tfs/TB1CzD7SXXXXXXJaXXXXXXXXXXX-32-32.png" class="shopIcon" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$orderInfo_402d891820316caed9d6c49643eabd34.0:$shopIcon"><span class="shop-name" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$orderInfo_402d891820316caed9d6c49643eabd34.0:$title-name">店铺:&nbsp;</span>
-									<a class="shop-url1" href="//store.taobao.com/shop/view_shop.htm?shop_id=150920153" target="_blank" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$orderInfo_402d891820316caed9d6c49643eabd34.0:$title-url1">华为官方旗舰店</a>
-								</div>
-								<div class="order-item order-item-column-4" id="item_743629d3d950d9a45a3fd0ce7356101f" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f">
-									<div class="order-itemInfo" id="itemInfo_743629d3d950d9a45a3fd0ce7356101f" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f">
-										<div class="info-detail info-cell" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0">
-											<div class="info-cell" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0.0">
-												<a class="info-img" href="//detail.tmall.com/item.htm?id=579718698456" target="_blank" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0.0.0"><img class="info-img" src="//img.alicdn.com/imgextra/i4/TB1JiVlihnaK1RjSZFBtfgW7VXa_055006.jpg_100x100q90.jpg" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0.0.0.0"></a>
-											</div>
-											<div class="info-cell info-msg" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0.1">
-												<a href="//detail.tmall.com/item.htm?id=579718698456" class="info-title" target="_blank" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0.1.0">【五一狂欢价】【买赠SuperCharge车充 享6期免息】Huawei/华为 Mate 20 Pro 曲面屏后置徕卡三镜头980芯片智能手机</a>
-												<div class="info-icon-list" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0.1.1">
-													<div data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0.1.1.0">
-														<a class="icon-main" title="" target="_blank" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0.1.1.0.$0"><img src="//img.alicdn.com/bao/uploaded/TB1nyj9SH2pK1RjSZFswu1NlXXa.png" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0.1.1.0.$0.0"></a>
-														<a class="icon-main" title="消费者保障服务，卖家承诺7天退换" href="//pages.tmall.com/wow/seller/act/seven-day" target="_blank" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0.1.1.0.$1"><img src="//img.alicdn.com/tps/i3/T1Vyl6FCBlXXaSQP_X-16-16.png" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0.1.1.0.$1.0"></a>
-														<a class="icon-main" title="消费者保障服务，卖家承诺如实描述" href="//www.taobao.com/go/act/315/xfzbz_rsms.php?ad_id=&amp;am_id=130011830696bce9eda3&amp;cm_id=&amp;pm_id=" target="_blank" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0.1.1.0.$2"><img src="//img.alicdn.com/tps/i4/T1BCidFrNlXXaSQP_X-16-16.png" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0.1.1.0.$2.0"></a>
-														<a class="icon-main" title="支持信用卡支付" target="_blank" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0.1.1.0.$3"><img src="//assets.alicdn.com/sys/common/icon/trade/xcard.png" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.0.1.1.0.$3.0"></a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="info-sku info-cell" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1">
-											<p data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$0"><span class="hd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$0.0"><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$0.0.0">网络类型</span><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$0.0.1">：</span></span><span class="bd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$0.1">4G全网通</span></p>
-											<p data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$1"><span class="hd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$1.0"><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$1.0.0">机身颜色</span><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$1.0.1">：</span></span><span class="bd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$1.1">极光色（UD版）</span></p>
-											<p data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$2"><span class="hd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$2.0"><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$2.0.0">套餐类型</span><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$2.0.1">：</span></span><span class="bd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$2.1">官方标配</span></p>
-											<p data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$3"><span class="hd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$3.0"><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$3.0.0">存储容量</span><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$3.0.1">：</span></span><span class="bd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.1.$3.1">8+128GB</span></p>
-										</div>
-										<div class="info-price info-cell" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemInfo_743629d3d950d9a45a3fd0ce7356101f.2">5499.00</div>
-									</div>
-									<div class="order-quantity" id="quantity_743629d3d950d9a45a3fd0ce7356101f" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$quantity_743629d3d950d9a45a3fd0ce7356101f"><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$quantity_743629d3d950d9a45a3fd0ce7356101f.0">2</span><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$quantity_743629d3d950d9a45a3fd0ce7356101f.1"></span><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$quantity_743629d3d950d9a45a3fd0ce7356101f.2"></span></div>
-									<div class="order-promotion item-promotion" id="promotion_743629d3d950d9a45a3fd0ce7356101f" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$promotion_743629d3d950d9a45a3fd0ce7356101f">
-										<div class="item-promotion-selecter" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$promotion_743629d3d950d9a45a3fd0ce7356101f.1"><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$promotion_743629d3d950d9a45a3fd0ce7356101f.1.0">五一狂欢价</span><span class="widget-tips-box" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$promotion_743629d3d950d9a45a3fd0ce7356101f.1.1"><img src="//img.alicdn.com/tps/TB1QFFkMXXXXXcNXFXXXXXXXXXX-32-32.png" class="wtip-icon" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$promotion_743629d3d950d9a45a3fd0ce7356101f.1.1.0"><div class="wtip-msg-box" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$promotion_743629d3d950d9a45a3fd0ce7356101f.1.1.2"><div class="wtip-arrow-icon" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$promotion_743629d3d950d9a45a3fd0ce7356101f.1.1.2.0"></div><ins class="wtip-msg-icon" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$promotion_743629d3d950d9a45a3fd0ce7356101f.1.1.2.1"></ins><div class="wtip-msg" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$promotion_743629d3d950d9a45a3fd0ce7356101f.1.1.2.2"><ul><li>五一狂欢价：包邮</li></ul></div></div></span>
-											<div class="item-promotion-gift" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$promotion_743629d3d950d9a45a3fd0ce7356101f.1.2"></div>
-										</div>
-									</div>
-									<div class="order-itemPay" id="itemPay_743629d3d950d9a45a3fd0ce7356101f" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemPay_743629d3d950d9a45a3fd0ce7356101f"><span class="simple-price" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$itemPay_743629d3d950d9a45a3fd0ce7356101f.0">10998.00</span></div>
-									<div class="seperator" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$5"></div>
-									<div class="order-service" id="service_shfw_743629d3d950d9a45a3fd0ce7356101f" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f">
-										<div class="service-title" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f.1">售后服务</div>
-										<div class="service-content" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f.2">
-											<div class="check-item" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f.2.1:$tmallservice_541858002304">
-												<div class="title-field" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f.2.1:$tmallservice_541858002304.0"><label data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f.2.1:$tmallservice_541858002304.0.0"><input type="checkbox" disabled="" name="tmallservice_541858002304" checked="" class="check-box" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f.2.1:$tmallservice_541858002304.0.0.0"><img src="//gtd.alicdn.com/tps/i2/T1nsmkXu0iXXbfMpDa-17-16.jpg" class="icon" alt="全国联保" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f.2.1:$tmallservice_541858002304.0.0.1"><span class="title" title="全国联保" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f.2.1:$tmallservice_541858002304.0.0.2">全国联保</span></label>
-													<a class="question widget-tips-question" target="_blank" href="//dianqi.tmall.com/page/helpcenter.htm?spm=0.0.0.0.U4ex7X&amp;first=shbz&amp;second=jcbz&amp;third=qglb&amp;ad_id=&amp;am_id=1301062879be1470c1ce&amp;cm_id=&amp;pm_id=" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f.2.1:$tmallservice_541858002304.0.1"><img class="ins-question-icon" src="//img.alicdn.com/tps/TB1zNZ_LVXXXXasapXXXXXXXXXX-32-32.png" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f.2.1:$tmallservice_541858002304.0.1.0"></a><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f.2.1:$tmallservice_541858002304.0.2"></span></div>
-												<div class="sprice-field" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f.2.1:$tmallservice_541858002304.1">0.00</div>
-												<div class="num-field" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f.2.1:$tmallservice_541858002304.2">2</div>
-												<div class="promo-field" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f.2.1:$tmallservice_541858002304.3">卖家赠送</div>
-												<div class="tprice-field" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_743629d3d950d9a45a3fd0ce7356101f.$service_shfw_743629d3d950d9a45a3fd0ce7356101f.2.1:$tmallservice_541858002304.4">0.00</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="order-item order-item-column-4" id="item_e293f2037febef4ee1f5b9e4ce65cd99" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99">
-									<div class="order-itemInfo" id="itemInfo_e293f2037febef4ee1f5b9e4ce65cd99" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99">
-										<div class="info-detail info-cell" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0">
-											<div class="info-cell" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0.0">
-												<a class="info-img" href="//detail.tmall.com/item.htm?id=579841783381" target="_blank" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0.0.0"><img class="info-img" src="//img.alicdn.com/imgextra/i8/TB1dSkrhVzqK1RjSZFvnu3B7VXa_030725.jpg_100x100q90.jpg" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0.0.0.0"></a>
-											</div>
-											<div class="info-cell info-msg" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0.1">
-												<a href="//detail.tmall.com/item.htm?id=579841783381" class="info-title" target="_blank" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0.1.0">【五一狂欢价】【买赠SuperCharge车充 享6期免息】Huawei/华为 Mate 20 X 全面屏超大广角徕卡三镜头正品智能mate20x</a>
-												<div class="info-icon-list" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0.1.1">
-													<div data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0.1.1.0">
-														<a class="icon-main" title="" target="_blank" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0.1.1.0.$0"><img src="//img.alicdn.com/bao/uploaded/TB1nyj9SH2pK1RjSZFswu1NlXXa.png" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0.1.1.0.$0.0"></a>
-														<a class="icon-main" title="消费者保障服务，卖家承诺7天退换" href="//pages.tmall.com/wow/seller/act/seven-day" target="_blank" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0.1.1.0.$1"><img src="//img.alicdn.com/tps/i3/T1Vyl6FCBlXXaSQP_X-16-16.png" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0.1.1.0.$1.0"></a>
-														<a class="icon-main" title="消费者保障服务，卖家承诺如实描述" href="//www.taobao.com/go/act/315/xfzbz_rsms.php?ad_id=&amp;am_id=130011830696bce9eda3&amp;cm_id=&amp;pm_id=" target="_blank" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0.1.1.0.$2"><img src="//img.alicdn.com/tps/i4/T1BCidFrNlXXaSQP_X-16-16.png" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0.1.1.0.$2.0"></a>
-														<a class="icon-main" title="支持信用卡支付" target="_blank" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0.1.1.0.$3"><img src="//assets.alicdn.com/sys/common/icon/trade/xcard.png" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.0.1.1.0.$3.0"></a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="info-sku info-cell" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1">
-											<p data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$0"><span class="hd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$0.0"><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$0.0.0">网络类型</span><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$0.0.1">：</span></span><span class="bd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$0.1">4G全网通</span></p>
-											<p data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$1"><span class="hd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$1.0"><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$1.0.0">机身颜色</span><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$1.0.1">：</span></span><span class="bd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$1.1">宝石蓝</span></p>
-											<p data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$2"><span class="hd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$2.0"><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$2.0.0">套餐类型</span><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$2.0.1">：</span></span><span class="bd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$2.1">官方标配</span></p>
-											<p data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$3"><span class="hd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$3.0"><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$3.0.0">存储容量</span><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$3.0.1">：</span></span><span class="bd" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.1.$3.1">6+128GB</span></p>
-										</div>
-										<div class="info-price info-cell" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemInfo_e293f2037febef4ee1f5b9e4ce65cd99.2">4499.00</div>
-									</div>
-									<div class="order-quantity" id="quantity_e293f2037febef4ee1f5b9e4ce65cd99" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$quantity_e293f2037febef4ee1f5b9e4ce65cd99"><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$quantity_e293f2037febef4ee1f5b9e4ce65cd99.0">2</span><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$quantity_e293f2037febef4ee1f5b9e4ce65cd99.1"></span><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$quantity_e293f2037febef4ee1f5b9e4ce65cd99.2"></span></div>
-									<div class="order-promotion item-promotion" id="promotion_e293f2037febef4ee1f5b9e4ce65cd99" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$promotion_e293f2037febef4ee1f5b9e4ce65cd99">
-										<div class="item-promotion-selecter" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$promotion_e293f2037febef4ee1f5b9e4ce65cd99.1"><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$promotion_e293f2037febef4ee1f5b9e4ce65cd99.1.0">五一狂欢价</span><span class="widget-tips-box" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$promotion_e293f2037febef4ee1f5b9e4ce65cd99.1.1"><img src="//img.alicdn.com/tps/TB1QFFkMXXXXXcNXFXXXXXXXXXX-32-32.png" class="wtip-icon" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$promotion_e293f2037febef4ee1f5b9e4ce65cd99.1.1.0"><div class="wtip-msg-box" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$promotion_e293f2037febef4ee1f5b9e4ce65cd99.1.1.2"><div class="wtip-arrow-icon" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$promotion_e293f2037febef4ee1f5b9e4ce65cd99.1.1.2.0"></div><ins class="wtip-msg-icon" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$promotion_e293f2037febef4ee1f5b9e4ce65cd99.1.1.2.1"></ins><div class="wtip-msg" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$promotion_e293f2037febef4ee1f5b9e4ce65cd99.1.1.2.2"><ul><li>五一狂欢价：包邮</li></ul></div></div></span>
-											<div class="item-promotion-gift" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$promotion_e293f2037febef4ee1f5b9e4ce65cd99.1.2"></div>
-										</div>
-									</div>
-									<div class="order-itemPay" id="itemPay_e293f2037febef4ee1f5b9e4ce65cd99" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemPay_e293f2037febef4ee1f5b9e4ce65cd99"><span class="simple-price" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$itemPay_e293f2037febef4ee1f5b9e4ce65cd99.0">8998.00</span></div>
-									<div class="seperator" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$5"></div>
-									<div class="order-service" id="service_shfw_e293f2037febef4ee1f5b9e4ce65cd99" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99">
-										<div class="service-title" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99.1">售后服务</div>
-										<div class="service-content" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99.2">
-											<div class="check-item" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99.2.1:$tmallservice_541858002304">
-												<div class="title-field" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99.2.1:$tmallservice_541858002304.0"><label data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99.2.1:$tmallservice_541858002304.0.0"><input type="checkbox" disabled="" name="tmallservice_541858002304" checked="" class="check-box" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99.2.1:$tmallservice_541858002304.0.0.0"><img src="//gtd.alicdn.com/tps/i2/T1nsmkXu0iXXbfMpDa-17-16.jpg" class="icon" alt="全国联保" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99.2.1:$tmallservice_541858002304.0.0.1"><span class="title" title="全国联保" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99.2.1:$tmallservice_541858002304.0.0.2">全国联保</span></label>
-													<a class="question widget-tips-question" target="_blank" href="//dianqi.tmall.com/page/helpcenter.htm?spm=0.0.0.0.U4ex7X&amp;first=shbz&amp;second=jcbz&amp;third=qglb&amp;ad_id=&amp;am_id=1301062879be1470c1ce&amp;cm_id=&amp;pm_id=" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99.2.1:$tmallservice_541858002304.0.1"><img class="ins-question-icon" src="//img.alicdn.com/tps/TB1zNZ_LVXXXXasapXXXXXXXXXX-32-32.png" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99.2.1:$tmallservice_541858002304.0.1.0"></a><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99.2.1:$tmallservice_541858002304.0.2"></span></div>
-												<div class="sprice-field" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99.2.1:$tmallservice_541858002304.1">0.00</div>
-												<div class="num-field" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99.2.1:$tmallservice_541858002304.2">2</div>
-												<div class="promo-field" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99.2.1:$tmallservice_541858002304.3">卖家赠送</div>
-												<div class="tprice-field" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$item_e293f2037febef4ee1f5b9e4ce65cd99.$service_shfw_e293f2037febef4ee1f5b9e4ce65cd99.2.1:$tmallservice_541858002304.4">0.00</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="orderPay" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$orderPay_402d891820316caed9d6c49643eabd34"><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$orderPay_402d891820316caed9d6c49643eabd34.0">店铺合计</span><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$orderPay_402d891820316caed9d6c49643eabd34.1">(含运费)</span><span class="price g_price" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$orderPay_402d891820316caed9d6c49643eabd34.2"><span data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$orderPay_402d891820316caed9d6c49643eabd34.2.0">￥</span><em class="style-middle-bold-red J_ShopTotal" data-reactid=".0.$confirmOrder_1.$order_402d891820316caed9d6c49643eabd34.$orderPay_402d891820316caed9d6c49643eabd34.2.1">19996.00</em></span>
-								</div>
-							</div>
-							<div class="order-facility facility checked" id="facility_1" data-reactid=".0.$confirmOrder_1.$facility_1">
-								<div class="order-agencyPay toggle" id="agencyPay_1" data-reactid=".0.$confirmOrder_1.$facility_1.$agencyPay_1"><label data-reactid=".0.$confirmOrder_1.$facility_1.$agencyPay_1.0"><input class="toggle-checkbox" type="checkbox" data-reactid=".0.$confirmOrder_1.$facility_1.$agencyPay_1.0.0"><span class="toggle-title" data-reactid=".0.$confirmOrder_1.$facility_1.$agencyPay_1.0.1">找人代付</span></label><span data-reactid=".0.$confirmOrder_1.$facility_1.$agencyPay_1.2"></span></div>
-								<div class="order-anonymous toggle checked" id="anonymous_1" data-reactid=".0.$confirmOrder_1.$facility_1.$anonymous_1"><label data-reactid=".0.$confirmOrder_1.$facility_1.$anonymous_1.0"><input class="toggle-checkbox" type="checkbox" checked="" data-reactid=".0.$confirmOrder_1.$facility_1.$anonymous_1.0.0"><span class="toggle-title" data-reactid=".0.$confirmOrder_1.$facility_1.$anonymous_1.0.1">匿名购买</span></label><span data-reactid=".0.$confirmOrder_1.$facility_1.$anonymous_1.2"></span></div>
-								<div class="order-installmentToggle " id="installmentToggle_1" data-reactid=".0.$confirmOrder_1.$facility_1.$installmentToggle_1"><label data-reactid=".0.$confirmOrder_1.$facility_1.$installmentToggle_1.0"><input class="installmentToggle-checkbox" type="checkbox" data-reactid=".0.$confirmOrder_1.$facility_1.$installmentToggle_1.0.0"><span class="installmentToggle-title" data-reactid=".0.$confirmOrder_1.$facility_1.$installmentToggle_1.0.1">花呗分期(最高6期免息)</span></label>
-									<div class="tip-pop" data-reactid=".0.$confirmOrder_1.$facility_1.$installmentToggle_1.1">
-										<div class="mui-msg mui-msg-normal hide" data-reactid=".0.$confirmOrder_1.$facility_1.$installmentToggle_1.1.0"><ins class="mui-msg-icon mui-msg-icon-tip" data-reactid=".0.$confirmOrder_1.$facility_1.$installmentToggle_1.1.0.0"></ins>
-											<div class="mui-msg-content" data-reactid=".0.$confirmOrder_1.$facility_1.$installmentToggle_1.1.0.1">花呗分期是花呗联合天猫淘宝推出的，面向互联网消费的赊购服务，通过支付宝轻松还款，0首付！</div><ins class="mui-msg-arrow mui-msg-arrow-top" data-reactid=".0.$confirmOrder_1.$facility_1.$installmentToggle_1.1.0.2"></ins></div>
-									</div>
-								</div>
-								<div class="order-installmentPicker hide" id="installmentPicker_1" data-reactid=".0.$confirmOrder_1.$facility_1.$installmentPicker_1">
-									<div class="ins-wrapper" data-reactid=".0.$confirmOrder_1.$facility_1.$installmentPicker_1.0">
-										<div class="ins-tip-msg" data-reactid=".0.$confirmOrder_1.$facility_1.$installmentPicker_1.0.0">
-											<div class="ins-msg-more" data-reactid=".0.$confirmOrder_1.$facility_1.$installmentPicker_1.0.0.0"></div>
-											<div class="ins-operate" data-reactid=".0.$confirmOrder_1.$facility_1.$installmentPicker_1.0.0.1"><span class="ins-change" data-reactid=".0.$confirmOrder_1.$facility_1.$installmentPicker_1.0.0.1.0">修改分期</span></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="order-payInfo" id="payInfo_1" data-reactid=".0.$confirmOrder_1.$payInfo_1">
-								<div class="payInfo-wrapper" data-reactid=".0.$confirmOrder_1.$payInfo_1.0">
-									<div class="payInfo-shadow" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0">
-										<div class="order-realPay" id="realPay_1" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$realPay_1">
-											<div data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$realPay_1.2"><span class="realPay-title" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$realPay_1.2.0">实付款：</span><span class="order-price" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$realPay_1.2.1">￥</span><span class="realPay-price" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$realPay_1.2.2">33884.00</span></div>
-										</div>
-										<div class="order-confirmAddr" id="confirmAddr_1" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$confirmAddr_1">
-											<div class="confirmAddr-addr" title="西昌安宁 西昌学院北校区" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$confirmAddr_1.$addr"><span class="confirmAddr-title" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$confirmAddr_1.$addr.0">寄送至：</span><span class="confirmAddr-addr-bd" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$confirmAddr_1.$addr.1"><span class="prov" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$confirmAddr_1.$addr.1.0">四川</span><span class="city" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$confirmAddr_1.$addr.1.1">凉山</span><span class="dist" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$confirmAddr_1.$addr.1.3">西昌</span><span class="town" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$confirmAddr_1.$addr.1.4">安宁</span><span class="street" data-street="西昌学院北校区" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$confirmAddr_1.$addr.1.5">西昌学院北校区</span></span>
-											</div>
-											<div class="confirmAddr-addr-user" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$confirmAddr_1.$user"><span class="confirmAddr-title" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$confirmAddr_1.$user.0">收货人：</span><span class="confirmAddr-addr-bd" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$confirmAddr_1.$user.1"><span data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$confirmAddr_1.$user.1.0">蔡运强</span><span data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$confirmAddr_1.$user.1.1">18892892114</span></span>
-											</div>
-										</div>
-										<div data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.0:$confirmEticket_1"></div>
-										<div class="order-confirmAddr" data-reactid=".0.$confirmOrder_1.$payInfo_1.0.0.1"></div>
-									</div>
-								</div>
-							</div>
-							<div class="order-submitOrder" id="submitOrder_1" data-reactid=".0.$confirmOrder_1.$submitOrder_1">
-								<div class="wrapper" data-reactid=".0.$confirmOrder_1.$submitOrder_1.0">
-									<a class="go-back" target="_self" role="button" title="{cartText}" href="//cart.taobao.com/cart.htm" data-reactid=".0.$confirmOrder_1.$submitOrder_1.0.0"><i data-reactid=".0.$confirmOrder_1.$submitOrder_1.0.0.0"></i><span data-reactid=".0.$confirmOrder_1.$submitOrder_1.0.0.1">返回购物车</span></a>
-									<a role="button" title="提交订单" class="go-btn" data-reactid=".0.$confirmOrder_1.$submitOrder_1.0.3">提交订单</a>
-								</div>
-							</div>
-							<div class="order-frontTrace" id="frontTrace_1" data="[object Object]" data-reactid=".0.$confirmOrder_1.$frontTrace_1"></div>
-							<div class="order-url1Transfer" id="url1Transfer_1" data="[object Object]" data-reactid=".0.$confirmOrder_1.$url1Transfer_1"></div>
-							<div class="order-ncCheckCode" id="ncCheckCode_ncCheckCode1" data="[object Object]" data-reactid=".0.$confirmOrder_1.$ncCheckCode_ncCheckCode1"></div>
-						</div>
+						<div class="mz-dialog-content"></div>
 					</div>
 				</div>
-				<form action="/auction/confirm_order.htm?x-itemid=573760676009&amp;x-uid=2645129165" target="_self" method="post" id="multiFormSubmit">
-					<input name="_tb_token_" type="hidden" value="555788bda6e73">
-					<input type="hidden" id="F_tb_token" value="555788bda6e73">
-					<input type="hidden" name="action" value="order/multiTerminalSubmitOrderAction">
-					<input type="hidden" name="event_submit_do_confirm" value="1">
-					<input type="hidden" name="input_charset" value="utf-8">
-					<input type="hidden" name="praper_alipay_cashier_domain" value="cashiersu18">
-					<input type="hidden" id="authYiYao" name="authYiYao" value="">
-					<input type="hidden" id="authHealth" name="authHealth" value="">
-					<input type="hidden" id="F_nick" name="F_nick" value="">
-				</form>
 
-				<div class="loading-mask hide"></div>
-				<div class="loading hide">
-					<p class="bg q"></p>
+				<div class="mz-dialog-bottom">
 
-					<p class="bg z"></p>
-				</div>
-				<!--–[if lte IE 8]-->
+					<div class="mz-btn success">确定</div>
 
-				<!--[endif]--->
-
-				<div id="_umfp" style="display:inline;width:1px;height:1px;overflow:hidden">
-					<img src="https://ynuf.alipay.com/service/clear.png?xt=Tea619c7f36940a6f639978bdcc3667db&amp;xa=buy_confirm_order">
 				</div>
 
-				<input type="hidden" id="tbToken" name="_tb_token_" value="555788bda6e73">
+			</div>
+		</div>
+		<div class="mz-mask hide">
+			<div class="mz-dialog tips ">
+				<div class="mz-dialog-header">
+					<div class="mz-dialog-title">提示</div>
+					<div class="mz-dialog-close"></div>
+				</div>
+				<div class="mz-dialog-main">
+					<div class="mz-dialog-warp">
+
+						<div class="mz-dialog-content"></div>
+					</div>
+				</div>
+
+				<div class="mz-dialog-bottom">
+
+					<div class="mz-btn success">确定</div>
+
+				</div>
+
+			</div>
+		</div>
+		<div class="mz-mask hide">
+			<div class="mz-dialog tips ">
+				<div class="mz-dialog-header">
+					<div class="mz-dialog-title">提示</div>
+					<div class="mz-dialog-close"></div>
+				</div>
+				<div class="mz-dialog-main">
+					<div class="mz-dialog-warp">
+
+						<div class="mz-dialog-content"></div>
+					</div>
+				</div>
+
+				<div class="mz-dialog-bottom">
+
+					<div class="mz-btn success">确定</div>
+
+				</div>
 
 			</div>
 		</div>
 
-		<div id="tstart" class="tstart-tdog-enable">
-			<div class="tstart-toolbar">
-				<div class="tstart-bd">
-					<div class="tstart-areas"><span class="tstart-item tstart-custom-item" id="tstart-plugin-tdog"><span class="tstart-tdog-trigger"><s class="tstart-item-icon tstart-tdog-offline"></s></span>
-						<div class="tstart-tdog-panel">
-							<div class="tstart-tdog-panel-hd"><span>最近联系人</span><s class="tstart-tdog-panel-closebtn"><img src="//gtd.alicdn.com/tps/i1/T1R6pOXoRyXXXXXXXX-15-15.png"></s></div>
-							<div class="tstart-tdog-panel-bd tstart-panel-loading" style="width:160px;height:160px"></div>
-						</div><span class="tstart-item-tips tdog-systips tstart-hidden"><i></i><s></s><div class="tdog-systips-content">{CONTENT}</div></span></span><span class="tstart-item tstart-custom-item" id="tstart-plugin-settings"><span class="tstart-settings-trigger" title="设置 web 旺旺"><s></s></span>
-						<div class="tstart-settings-panel">
-							<div class="tstart-settings-panel-hd"></div>
-							<div class="tstart-settings-panel-bd">
-								<p><input type="checkbox" class="tstart-settings-login"><label>自动登录</label></p>
-								<p><input type="checkbox" class="tstart-settings-msg"><label>接受陌生人消息</label></p>
+		<div class="layout-magnet" style="bottom: 100px;">
+			<ul class="layout-magnet-list">
+
+				<li class="layout-magnet-item layout-magnet-item-app">
+					<a href="javascript:void(0);" class="layout-magnet-link">
+						<div class="layout-magnet-icon">
+							<i class="layout-font layout-font-app"></i>
+						</div>
+						<div class="layout-magnet-text">&nbsp;</div>
+						<div class="layout-magnet-download">
+							<div class="layout-magnet-download-body">
+								<img src="//store.res.meizu.com/layout/img/qrcode-3389e5b72a.png" class="layout-magnet-qrcode" alt="QRCode">
+								<p class="layout-magnet-download-text">扫码下载魅族商城APP</p>
 							</div>
 						</div>
-						</span>
-					</div>
-				</div>
-			</div>
+					</a>
+				</li>
+
+				<li class="layout-magnet-item layout-magnet-item-top">
+					<a href="javascript:void(0);" class="layout-magnet-link" data-mtype="click_wmz_public_cbxf_top" data-bh="click_wmz_public_cbxf_top">
+						<div class="layout-magnet-icon">
+							<i class="layout-font layout-font-top"></i>
+						</div>
+						<div class="layout-magnet-text">回到顶部</div>
+					</a>
+				</li>
+
+			</ul>
+			<a class="layout-magnet-minimize layout-magnet-icon layout-magnet-link" href="javascript:void(0);">
+				<i class="layout-font layout-font-minimize"></i>
+			</a>
 		</div>
-		<div style="height:0;width:0;overflow:hidden"></div>
 	</body>
 
 </html>

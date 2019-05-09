@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>我的订单-魅族商城</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="static/css/myorder/layout-a2ae44047d.css">
+
+		<link rel="stylesheet" href="static/css/myorder/c53414.css">
+		<style>
+			.sureGet .ui-pop-main .ui-pop-cont {
+				line-height: 28px !important;
+				margin: 64px auto 30px !important;
+				padding: 0 30px;
+			}
+			
+			.font-14 {
+				font-size: 14px;
+			}
+			
+			.big-font {
+				font-size: 18px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="nTalk_post_hiddenElement" style="left: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;"></div>
+		<!-- common header -->
+
+		<header class="layout-header clearfix" id="layoutHeader">
+			<div class="mzcontainer">
+				<div class="layout-header-logo">
+					<a target="_blank" href="http://www.meizu.com" class="layout-header-logo-link" alt="魅族科技" data-mtype="wmz_public_yt_logo" data-bh="click_wmz_public_yt_logo">
+						<img src="data:image/png;base64,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" style="max-width:125px;margin-top:  28px;">
+					</a>
+				</div>
+				<ul class="layout-header-service clearfix">
+					<li class="layout-header-service-item layout-header-service-search mz-autocomlete" id="layoutHeaderSearch">
+
+						<input class="mz-autocomlete-input" placeholder="魅族 Note9"><img class="layout-img-search" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAcCAYAAAAEN20fAAAAAXNSR0IArs4c6QAAA4VJREFUSA21Vz1oU1EU7ntNGweldZWiiyB0KaHVgD+LS0HrJtZBpCC0aZMsaju42Mkh1ilpTDrVn8XiIupQIVsdktihS0EQQaiVLkKxQ9KGxO97vvO4L76bJnnpg+Sec+453/neub/P6GryicfjwUqlcqFarQ7UarVTDDMMY9s0za1AIFBIJpPlJqE83QxPq2KMRCJjSD6BpKMgcFzpckT07aFvFaSWM5nMB6ejBUFLBAT49s+AdbkFPLquoUL30+l0sZU4TyJTU1MRgCTxlgEVDG++CX0D9m3aoXOIhqAPUpcH9grkeDabzYjtsPY/IiDxFMAPJRCgZegpvGUGb/lN7Go7MzNzFvMnAt8YfIPSB30BZGZFb9S6iLASAHquBOR7enrGFxcXfyg2rRiNRs8cHBy8gUNYnEBmupnKOEQ4J0DiM37WcADgbW9v751WVwNX1/7+/mvg3CQZ4FTwu4RJXBByXq0pRk5MIQFbvh0SxCJxxhKDOjHtSU9V+1gVsZfoe3qBfRnz4Vyzw6FD5jBh3nwFEWvOYGnfaLS0rYpwnxBABKb8kiAWMYgluGoOsamtyTFFFUbFyNUhst9WxWIO5tJhmty2wdzaMeG8qVuiOoBGdmIRkz7MwVw6fxMlG1A6NxS5U6KDWZfLhW+CqXWA0QrZ2jFdHj4VFVPNVQ/rLN/6jqPQMUw1Ha6JTqcKkJ3q6AJatddh/tLFY3mbW0rnkCJ3SnQw63K58E0ssQJY79GKMRzkAeby8KEQi5iEYA7m0sGZ3JLhvCoOPEVF9tuqWMzR6NyyJitKtixJwTzG7Vn0dltiEEviIb8Q2au1iNhnwBodwDzIo7zRLugFpNoYSwxiKfbZycnJ04ruEp3li6o8AGverPiEeZS3Q4YxjCWGhWT/gdQViBu484yrdpGd+wgNR3ExAoF3eMnraANOUsN42dfXF0skEn/E1i0C2/X19S8jIyM8dy7adn46TA8PD/eHw+HvxWLxt213NVwdoVDoEXxfocOZX6jwwtLS0j3Ef4J8FX0n7cChUql0C/Y8cv6kzVUR28mqDOSOXp7n5uZO7O7upkD2ruThVID+GGSfeBKho5/PCc433dUQuLdx+PFe3C+E0I5piYiTfXubAPuOfWBx9QCP91pOYD6HE/nn19U1Pz9/bGdn5zyPcgBYZxLA2v7kXFlZ6c7lcteAVcXQfPwLwMHO9PXwzvQAAAAASUVORK5CYII="></li>
+					<li class="layout-header-service-item layout-header-service-msg" id="layoutHeaderUser">
+						<a class="layout-header-service-link" href="//me.meizu.com/member/index" data-mtype="wmz_public_yt_mycenter" data-bh="click_wmz_public_yt_mycenter">
+							<img src="//image-res.mzres.com/img/download/uc/15/19/10/12/30/151910123/w200h200?t=1517740541000" alt=" " class="layout-header-service-avatar">
+						</a>
+					</li>
+					<li class="layout-header-service-item layout-header-service-cart" id="layoutHeaderCart">
+						<a class="layout-header-service-link service-cart" href="//cart.meizu.com" data-mtype="wmz_public_yt_cart" data-bh="click_wmz_public_yt_cart">
+							<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAABAxJREFUaAXtWbtLNDEQn1NPQcG3lS9UxAcWiiAIlnaCYCFW/hn+FXbCIdhfeQiKoPZiIaeg4At8gKjgs7BQFPX7fqsJ2d3snbsbd7PeTrOTSTKZX2aSTLKJz/9EBURFBYTVgBoD/usejz0ce/iPzUAc0n/MoTY4BefhEusUrK+v0/LyMr2+vlqreHl8fJzGxsZ4OUqMzcMrKys5wQLczs5OlDCabLUB7u3tNTWQFS4uLuj+/l5Wpb0sYb084C5xfn4u9fL8/Dw9Pz8boCYnJ2l0dFR7gFYDbWs4kUhQW1ubtZ1R7uvro62tLYNHWEcRsC2kpUi/hQMDA7z69PSUnp6eeDkqjM3DuQyHh5PJJL29vdHHxwdtbGyQOAm5+gZVhwitqqqisrIy6ZC2NSxtJQhTqRTt7u4KEv1YgO7v76epqSmqqakxGegqpNFTN4+a0HwXsPFij5mbm7Ntvq4BI6yjQldXV5TNZk3mulrD6FlZWUmNjY10eXlpKBoZGSFkXroQvLuwsEAnJyeGScgZhoeHuXmuAaMnkhMGGGc2Ngmd6OHhgZtTXV3NeTCuQxqdenp68DEIwHU6nnBcPj4+MvOoq6uL82A8Ae7s7KSSkq/gQAgdHByYlIZZENdsfX09tba2mszxBLi0tJQ6Ojq4ov39fc6HzYiABwcHbeZ4AgwtYlgfHh7aFIchsIazUsDirQpr5vr6OgyMpjFF78rCGY09e7ilpYUqKir4gDqsYxGwzLu+ACN96+7u1gbwT8LZF2B0Ftfx8fExvb+/8wkImhG96xTOsMlzSKOzuI5fXl7o7OwM4lBIBOwUzjDMF+C6ujpqaGjgAMM6nn4azr4BQ4EY1mFtXKJ3c4WzEsBiWCOvZm9eUB4UiYBzhTPs8RXSUIBctajoSw1eQY6OjiAOjNyEM4zyDbi8vNyUrwa9jkXv5gtnJYChRFzHe3t7hAtFEIRjUAScL5xhk28PQ4k4EO6ii4uLvw4ak5rJZExXwaGhIZiTkzw9AFg1NjU1GV5mu/Ta2hptb29Tc3MzISNTTdgr8JJxd3fHVePRDnbkI9evlk4K8etldnbWNONObVXLa2traWZmhvDNR8oAY6CbmxtKp9MU5HUR+8f09DQhCfoJKQXMBsRRgTTz9vb2V/Lr4uJiI8Nrb293/C3EbLF+fwWwdRCdykp2aZ0A5bMlBpxvhqJer+QcFicB2c/S0hJtbm4aYrz6488ENhoV5Fe/csAAu7q6yrExfmJigsv8MH71K1/DzLMiKJlMrHfDy3TJZE46lQN2GkgXuXLA4p86BlImY3VuvzJdMpmTXuVrmP06ZWEGY5jMyQg3cqbLq/4403Iz21Fsq3wN6z4JMWDdPeTXvtjDfmdQ9/4F5+F/nGyFQiUTZpsAAAAASUVORK5CYII=" alt=" " class="layout-font-cart">
+							<span class="layout-header-service-cart-num" style="line-height: 15px;">1</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="layout-header-nav clearfix" id="layoutHeaderNav">
+					<li class="layout-header-nav-item">
+						<a href="https://lists.meizu.com/page/list?categoryid=76" class="layout-header-nav-link" data-mtype="store_index_dh_0" data-bh="store_index_dh_0">手机</a>
+					</li>
+					<li class="layout-header-nav-item">
+						<a href="https://lists.meizu.com/page/list/?categoryid=231" class="layout-header-nav-link" data-mtype="store_index_dh_1" data-bh="store_index_dh_1">声学</a>
+					</li>
+					<li class="layout-header-nav-item">
+						<a href="https://lists.meizu.com/page/list?categoryid=186" class="layout-header-nav-link" data-mtype="store_index_dh_2" data-bh="store_index_dh_2">配件</a>
+					</li>
+					<li class="layout-header-nav-item">
+						<a href="https://lists.meizu.com/page/list/?categoryid=222" class="layout-header-nav-link" data-mtype="store_index_dh_3" data-bh="store_index_dh_3">生活</a>
+					</li>
+					<li class="layout-header-nav-item">
+						<a href="https://www.flyme.cn/index.html" class="layout-header-nav-link" data-mtype="store_index_dh_4" data-bh="store_index_dh_4">Flyme</a>
+					</li>
+					<li class="layout-header-nav-item">
+						<a href="http://care.meizu.com/" class="layout-header-nav-link" data-mtype="store_index_dh_5" data-bh="store_index_dh_5">服务</a>
+					</li>
+					<li class="layout-header-nav-item">
+						<a href="http://retail.meizu.com/index.html" class="layout-header-nav-link" data-mtype="store_index_dh_6" data-bh="store_index_dh_6">专卖店</a>
+					</li>
+					<li class="layout-header-nav-item">
+						<a href="https://bbs.meizu.cn/" class="layout-header-nav-link" data-mtype="store_index_dh_7" data-bh="store_index_dh_7">社区</a>
+					</li>
+					<li class="layout-header-nav-item app-down">
+						<a href="javascript:;?click=gw_public_yt_app" class="layout-header-nav-link" target="_blank" data-mtype="click_wmz_public_yt_app" data-bh="click_wmz_public_yt_app">APP下载</a>
+					</li>
+				</ul>
+				<div class="layout-header-nav-downmenu" id="layoutHeaderNavDownmenu"></div>
+				<div class="layout-header-app-down" id="layoutHeaderAppDown">
+					<div class="layout-header-app-down-content">
+						<img class="app-down-content-img" src="https://fms.res.meizu.com/dms/2019/01/18/935524fa-9d0b-420b-a485-105974823f40.jpg" alt="">
+						<a class="app-down-link-1 app-down-link" data-mtype="gw_index_dt_download_1" data-bh="click_gw_index_dt_download_1" target="_blank" href="https://hd.meizu.com/share/app_download.html">
+							<img src="https://openfile.meizu.com/group1/M00/05/FC/Cgbj0Ftzj4CAWPgjAAAPE0ahc9Y069.png" alt="">
+						</a>
+						<a class="app-down-link-2 app-down-link" data-mtype="gw_index_dt_download_2" data-bh="click_gw_index_dt_download_2" target="_blank" href="http://app.flyme.cn/apps/public/detail">
+							<img src="https://openfile.meizu.com/group1/M00/05/FC/Cgbj0Ftzj4CAWPgjAAAPE0ahc9Y069.png" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="store-wrap">
+			<div class="crumbs">
+				<a href="//store.meizu.com/index.html">首页 &gt;&nbsp;</a>
+				<a href="//me.meizu.com/member/index">我的商城 &gt;&nbsp;</a>
+				<a href="" class="active">我的订单&nbsp;</a>
+			</div>
+			<div class="main clearfix">
+				<div class="left-nav f-fl">
+					<div class="nav-main">
+						<a href="javascript:;" class="type-title"><i class="iconfont icon-orderCenter"></i>订单中心</a>
+						<a href="//ordercenter.meizu.com/list/index.html" class="ml active" data-mtype="store_mc_order_me" data-bh="click_store_mc_order_me" data-mdesc="我的订单">我的订单</a>
+
+						<a href="javascript:;" class="type-title"><i class="iconfont icon-selfCenter"></i>个人中心</a>
+						<a href="//me.meizu.com/member/address/index" class="ml " data-mtype="store_mc_me_address" data-bh="click_store_mc_me_address" data-mdesc="地址管理">地址管理</a>
+						<a href="//me.meizu.com/member/favorite/index" class="ml " data-mtype="store_mc_me_favorite" data-bh="click_store_mc_me_favorite" data-mdesc="我的收藏">我的收藏</a>
+						<a href="//me.meizu.com/member/message/index" class="ml " data-mtype="store_mc_me_msg" data-bh="click_store_mc_me_msg" data-mdesc="消息提醒">消息提醒</a>
+
+					</div>
+				</div>
+				<div class="right-content f-fr">
+					<div class="order-main">
+						<div class="type-tab-btn">
+							<a href="javascript:;" class="allOrder active" data-type="-1" data-bh="click_store_mc_orderstatus_all">全部订单</a><i class="line">|</i>
+							<a class="waitPay" href="javascript:;" data-type="0" data-bh="click_store_mc_orderstatus_1">待付款<span class="amount _actAmount"></span></a><i class="line">|</i>
+							<a class="waitDeliver" href="javascript:;" data-type="1" data-bh="click_store_mc_orderstatus_2">待发货</a><i class="line">|</i>
+							<a class="hasDeliver" href="javascript:;" data-type="2" data-bh="click_store_mc_orderstatus_3">已发货</a><i class="line">|</i>
+							<a class="other" href="javascript:;" data-type="99" data-bh="click_store_mc_orderstatus_other">其他</a>
+						</div>
+						<div class="list-head">
+							<ul class="clearfix">
+								<li class="w50">
+									<select id="checkType" class="check-type">
+										<option value="0">近三个月的订单</option>
+										<option value="1">全部订单</option>
+									</select>
+									订单明细
+								</li>
+								<li class="w125">售后</li>
+								<li class="w125">金额</li>
+								<li class="w125">状态</li>
+								<li class="w125">操作</li>
+							</ul>
+						</div>
+						<div id="tableList" class="type-contain ui-load-container">
+							<div class="ui-load-content"><input id="unPayNum" type="hidden" value="0">
+								<table class="orderItem">
+									<tbody>
+										<tr class="trHead">
+											<td colspan="4" class="title clearfix">
+												<div class="f-fl">下单时间：<span class="time">2019-05-06 09:59:43</span>订单号：<span class="orderNumber">51050643590921833081</span>
+													<a href="javascript:;" class="kefu j-kefu"><i class="iconfont icon-kefu"></i>&nbsp;联系客服</a>
+												</div>
+											</td>
+										</tr>
+										<tr class="list-box b-l b-r b-b">
+											<td class="list b-r j-iamCart">
+												<div class="cart-wrap j-CartWrap">
+													<div class="shop j-shop">
+														<div class="item b-t clearfix j-iamMain">
+															<a class="productDetail nameWidth" href="//detail.meizu.com/item/meizu_power_bank_3.html" target="_blank">
+																<img src="https://openfile.meizu.com/group1/M00/06/CC/Cgbj0VvJjKeATLxsAAF7_uDseks390.png" class="f-fl"></a>
+															<div class="describe f-fl ">
+																<div class="vertic clearfix">
+																	<span class="clearfix">
+                                          <a class="productDetail nameWidth" href="//detail.meizu.com/item/meizu_power_bank_3.html" target="_blank">
+                                          魅族移动电源3 简约白 双向快充</a>
+
+                                          <p>
+                                            ￥79
+                                            ×1
+                                          </p>
+                                      </span>
+																</div>
+															</div>
+															<input type="hidden" class="orderSn" value="51050643590921833081">
+															<input type="hidden" class="isCart" value="1">
+															<input class="orderSnSon" type="hidden" value="21050643590921835081">
+															<input type="hidden" class="supplierId" value="1">
+															<input type="hidden" class="supportXiaoneng" value="1">
+															<input type="hidden" class="brandName" value="魅族">
+														</div>
+													</div>
+
+												</div>
+											</td>
+											<td class="b-r w125 center price b-t">
+												<div class="priceDiv">
+													￥ 89
+
+												</div>
+											</td>
+											<td class="b-r w125 center state b-t">
+												<div class="stateDiv">
+													<div>已取消<br></div>
+
+												</div>
+											</td>
+											<td class="w125 center opreat b-t">
+												<ul>
+
+													<li class="more">
+														<a href="//ordercenter.meizu.com/detail.html?sn=51050643590921833081&amp;isOld=0&amp;isCart=1" target="_blank">查看详情</a>
+													</li>
+												</ul>
+											</td>
+										</tr>
+										<tr class="b-b b-l b-r show-more-order j-showOrder hide">
+											<td colspan="4">还有<span class="j-orderNum"></span>种商品<i class="iconfont icon-arrow-xx"></i></td>
+										</tr>
+										<tr class="empty">
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<input type="hidden" id="pageId" value="0">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- common js -->
+
+		<!-- end content -->
+
+		<div id="meizu-footer" class="meizu-footer">
+			<div class="meizu-footer-link">
+				<div class="meizu-footer-wrap">
+					<div class="meizu-row">
+						<ul class="meizu-footer-service" id="meizu-footer-service">
+							<li>
+								<a href="http://service.meizu.com/help/delivery.html" target="_blank" data-bh="click_store_index_bottom_support_1" data-mtype="store_index_bottom_support_1"><img src="https://fms.res.meizu.com/dms/2018/07/13/2c69bf7c-2d29-4fd4-852e-0aa497f36f51.png"><span>满80免运费</span></a>
+							</li>
+							<li>
+								<a href="https://store.meizu.com/marrive/summary.html" target="_blank" data-bh="click_store_index_bottom_support_2" data-mtype="store_index_bottom_support_2"><img src="https://fms.res.meizu.com/dms/2018/07/13/d28eac8b-b915-49dc-9dbd-80884a07d44f.png"><span>100+ 城市次日送达</span></a>
+							</li>
+							<li>
+								<a href="http://service.meizu.com/help/after_ser.html#policy1" target="_blank" data-bh="click_store_index_bottom_support_3" data-mtype="store_index_bottom_support_3"><img src="https://fms.res.meizu.com/dms/2018/07/13/b21f3e65-f7f4-4693-914c-c070faf96770.png"><span>7天无理由退货</span></a>
+							</li>
+							<li>
+								<a href="http://service.meizu.com/help/after_ser.html#policy2" target="_blank" data-bh="click_store_index_bottom_support_4" data-mtype="store_index_bottom_support_4"><img src="https://fms.res.meizu.com/dms/2018/07/13/1998f0da-a439-4e07-9736-e6a1c39fb0ae.png"><span>15天换货保障</span></a>
+							</li>
+							<li>
+								<a href="https://service.meizu.com/help/after_ser.html#policy3" target="_blank" data-bh="click_store_index_bottom_support_5" data-mtype="store_index_bottom_support_5"><img src="https://fms.res.meizu.com/dms/2018/07/13/420825c1-4763-436d-b3e1-721651ccc70c.png"><span>1年免费保修</span></a>
+							</li>
+							<li>
+								<a href="http://service.meizu.com/repair/home/profile.html" target="_blank" data-bh="click_store_index_bottom_support_6" data-mtype="store_index_bottom_support_6"><img src="https://fms.res.meizu.com/dms/2018/07/13/1c5cfeff-1b35-499e-bc2a-1fd29305be69.png"><span>上门快修</span></a>
+							</li>
+						</ul>
+						<div class="onlive-server">
+							<span>周一至周日 7:30-24:00</span>
+							<p class="tel">400-788-3333</p>
+							<a class="onlive-btn" href="http://url.meizu.com/ols_PC" data-mtype="store_index_bottom_service_online" data-bh="click_entrance_store_service" target="_blank">在线客服</a>
+						</div>
+					</div>
+					<hr class="footer-hr">
+					<div class="meizu-footer-co">
+						<div class="meizu-row">
+							<div class="meizu-footer-info">
+								<div class="meizu-footer-info-left">
+									<ul class="clearfix" id="meizu-footer-links">
+										<li>
+											<a href="https://www.meizu.com/about.html#know" target="_blank" data-bh="click_store_index_bottom_support_1" data-mtype="store_index_bottom_about_1">了解魅族</a>
+										</li>
+										<li>
+											<a href="http://hr.meizu.com/" target="_blank" data-bh="click_store_index_bottom_support_2" data-mtype="store_index_bottom_about_2">加入我们</a>
+										</li>
+										<li>
+											<a href="https://www.meizu.com/about.html#contact" target="_blank" data-bh="click_store_index_bottom_support_3" data-mtype="store_index_bottom_about_3">联系我们</a>
+										</li>
+										<li>
+											<a href="https://www.flyme.cn/index.html" target="_blank" data-bh="click_store_index_bottom_support_4" data-mtype="store_index_bottom_about_4">Flyme</a>
+										</li>
+										<li>
+											<a href="http://bbs.meizu.cn/" target="_blank" data-bh="click_store_index_bottom_support_5" data-mtype="store_index_bottom_about_5">魅族社区</a>
+										</li>
+										<li>
+											<a href="https://meizu.tmall.com/" target="_blank" data-bh="click_store_index_bottom_support_6" data-mtype="store_index_bottom_about_6">天猫旗舰店</a>
+										</li>
+										<li>
+											<a href="https://www.meizu.com/feedback.html" target="_blank" data-bh="click_store_index_bottom_support_7" data-mtype="store_index_bottom_about_7">问题反馈</a>
+										</li>
+										<li>
+											<a href="https://www.meizu.com/authorization.html" target="_blank" data-bh="click_store_index_bottom_support_8" data-mtype="store_index_bottom_about_8">线上销售授权名单公示</a>
+										</li>
+										<li>
+											<a href="https://cimg2.res.meizu.com/www/meizu/publish_license.pdf" target="_blank" data-bh="click_store_index_bottom_support_9" data-mtype="store_index_bottom_about_9">出版物经营许可证</a>
+										</li>
+										<li class="no-border meizu-footer-langList" id="meizu-footer-langList" style="display: list-item;">
+											<span id="meizu-footer-language" class="meizu-footer-language" data-mtype="wmz_public_yw_language" data-bh="click_language">
+                    <a class="button-language" href="javascript:void(0);">
+                      <i class="icon-lang-logo icon-lang-logo-cn"></i>简体中文
+                    </a>
+                  </span>
+											<div class="modal-lang-body" id="modal-lang-body-footer">
+												<ul id="lang_list_" class="lang_list_" style="display:none">
+													<li class="footerLi">
+														<a href="javascript:;" data-lang="/index.html" data-countryhref="https://www.meizu.com/index.html"><i style="background-image:url(https://fms.res.meizu.com/dms/2017/12/18/1c31db15-ab85-4932-8e6c-edfd6039bc60.png);background-position: 0 0;" class="lang-logo lang-logo-index.html"></i><span>简体中文</span></a>
+													</li>
+													<li class="footerLi">
+														<a href="javascript:;" data-lang="/hk/" data-countryhref="https://www.meizu.com/hk"><i style="background-image:url(https://fms.res.meizu.com/dms/2017/12/18/85fba643-95ca-4db1-991c-43e66f108afb.png);background-position: 0 0;" class="lang-logo lang-logo-hk/"></i><span>繁體中文</span></a>
+													</li>
+													<li class="footerLi">
+														<a href="javascript:;" data-lang="/en/" data-countryhref="https://www.meizu.com/en"><i style="background-image:url(https://www3.res.meizu.com/static/cn/icon-en/f9C63F21yJxwMNvsqRSTpnWlkiahgBue.png);background-position: 0 0;" class="lang-logo lang-logo-en/"></i><span>English</span></a>
+													</li>
+													<li class="footerLi">
+														<a href="javascript:;" data-lang="/ru" data-countryhref="https://www.meizu.com/ru/"><i style="background-image:url(https://fms.res.meizu.com/dms/2017/12/18/e743e97c-71af-4853-a91d-bd81c2d3a31c.png);background-position: 0 0;" class="lang-logo lang-logo-ru"></i><span>Русский</span></a>
+													</li>
+													<li class="footerLi">
+														<a href="javascript:;" data-lang="/ua" data-countryhref="https://www.meizuclub.com.ua"><i style="background-image:url(https://fms.res.meizu.com/dms/2017/12/18/f6b0d26b-e9ac-45a9-8b7f-0c4840a627c1.png);background-position: 0 0;" class="lang-logo lang-logo-ua"></i><span>Україна</span></a>
+													</li>
+													<li class="footerLi">
+														<a href="javascript:;" data-lang="/tr" data-countryhref="https://www.meizu-tr.com/ "><i style="background-image:url(https://fms.res.meizu.com/dms/2017/12/20/062710b5-2f96-4402-ad27-822af5b4f993.png);background-position: 0 0;" class="lang-logo lang-logo-tr"></i><span>Türkiye</span></a>
+													</li>
+													<li class="footerLi">
+														<a href="javascript:;" data-lang="/in" data-countryhref="http://meizuindia.com/"><i style="background-image:url(https://fms.res.meizu.com/dms/2017/12/18/022b228e-19a7-4227-b686-e23ae231d3b5.png);background-position: 0 0;" class="lang-logo lang-logo-in"></i><span>India</span></a>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+
+									<div class="meizu-footer-language-wp clearfix">
+
+									</div>
+
+									<div class="meizu-footer-certificate">
+										©2019 Meizu Telecom Equipment Co., Ltd. All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+										<a target="_blank" href="http://www.miitbeian.gov.cn/" hidefocus="true">粤ICP备13003602号</a>
+										<a target="_blank" href="/static/_partial/footer/images/icp2.jpg" hidefocus="true">合字B2-20170010 </a>
+										<a target="_blank" href="/static/_partial/footer/images/com_licence.jpg" hidefocus="true">营业执照</a>
+										<a target="_blank" href="https://www.meizu.com/legal.html" hidefocus="true">法律声明</a>
+										<span class="footer-info-record" target="_blank" href="">
+                  <i></i>
+                  粤公网安备 44049102496009 号
+                </span>
+										<a class="footer-info-license" target="_blank" rel="nofollow" href="http://210.76.65.188/" hidefocus="true">
+											<i></i>
+										</a>
+										<a class="footer-info-wel" target="_blank" rel="nofollow" href="http://210.76.65.188/webrecord/innernet/Welcome.jsp?bano=4404013010531" hidefocus="true">
+											<i></i>
+										</a>
+										<a class="footer-info-trust" target="_blank" rel="nofollow" href="https://credit.szfw.org/CX20151204012550820380.html" hidefocus="true">
+											<i></i>
+										</a>
+									</div>
+
+								</div>
+
+								<div id="ii-subscribe">
+									<a href="javascript:;" target="_blank" data-mtype="store_index_bottom_follow_1" data-bh="click_store_index_bottom_follow_1"><img src="https://fms.res.meizu.com/dms/2019/01/07/26b50023-fde7-4f23-ae32-3aa39585f4c4.png" alt=""><i class="ii-subscribe-img " style="background-size:96%;background-image:url(https://fms.res.meizu.com/dms/2019/01/07/3b085af8-a47b-453c-b147-a4b352fb3a14.png)" data-img="https://fms.res.meizu.com/dms/2019/01/07/3b085af8-a47b-453c-b147-a4b352fb3a14.png" data-imghover="https://fms.res.meizu.com/dms/2019/01/07/6721704b-7b6d-445d-a025-e33649e5db74.png"><em style="display:none; background:url(https://fms.res.meizu.com/dms/2019/01/07/6721704b-7b6d-445d-a025-e33649e5db74.png)"></em></i></a> <span class="ii-hr"></span>
+									<a href="javascript:;" target="_blank" data-mtype="store_index_bottom_follow_2" data-bh="click_store_index_bottom_follow_1"><img src="https://fms.res.meizu.com/dms/2019/01/07/33474117-9a2d-455d-a8ff-997355238400.jpg" alt=""><i class="ii-subscribe-img " style="background-size:96%;background-image:url(https://fms.res.meizu.com/dms/2019/01/07/58e3e041-5543-4414-aaf1-d8e1fd539af6.png)" data-img="https://fms.res.meizu.com/dms/2019/01/07/58e3e041-5543-4414-aaf1-d8e1fd539af6.png" data-imghover="https://fms.res.meizu.com/dms/2019/01/07/cb0d00dc-41f7-4339-a0b3-25ee7dca1d4a.png"><em style="display:none; background:url(https://fms.res.meizu.com/dms/2019/01/07/cb0d00dc-41f7-4339-a0b3-25ee7dca1d4a.png)"></em></i></a> <span class="ii-hr"></span>
+									<a href="https://user.qzone.qq.com/2762957059" target="_blank" data-mtype="store_index_bottom_follow_3" data-bh="click_store_index_bottom_follow_1"><i class="ii-subscribe-img " style="background-size:96%;background-image:url(https://fms.res.meizu.com/dms/2019/01/07/52cba4a4-b3a6-4522-9883-d3a918e7d4a9.png)" data-img="https://fms.res.meizu.com/dms/2019/01/07/52cba4a4-b3a6-4522-9883-d3a918e7d4a9.png" data-imghover="https://fms.res.meizu.com/dms/2019/01/07/aff10988-6493-49c0-961a-0c91eae603b4.png"><em style="display:none; background:url(https://fms.res.meizu.com/dms/2019/01/07/aff10988-6493-49c0-961a-0c91eae603b4.png)"></em></i></a> <span class="ii-hr"></span>
+									<a href="https://weibo.com/meizumobile" target="_blank" data-mtype="store_index_bottom_follow_4" data-bh="click_store_index_bottom_follow_1"><i class="ii-subscribe-img " style="background-size:96%;background-image:url(https://fms.res.meizu.com/dms/2019/01/07/bcccf9d2-e0e5-441b-b4a3-f78c12bc3933.png)" data-img="https://fms.res.meizu.com/dms/2019/01/07/bcccf9d2-e0e5-441b-b4a3-f78c12bc3933.png" data-imghover="https://fms.res.meizu.com/dms/2019/01/07/7df8d821-a5c4-4619-9981-04e31db6e3de.png"><em style="display:none; background:url(https://fms.res.meizu.com/dms/2019/01/07/7df8d821-a5c4-4619-9981-04e31db6e3de.png)"></em></i></a>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="store-cart store-cart-hide" style="top: 70px; left: 1254.5px;"></div>
+		<div class="layout-user-downmenu layout-user-downmenu-login">
+			<ul class="layout-user-downmenu-list">
+				<li class="layout-user-downmenu-item">
+					<a href="//ordercenter.meizu.com/list/index.html" class="layout-user-downmenu-link" data-mtype="click_wmz_public_grzx_myorder" data-bh="click_wmz_public_grzx_myorder">我的订单<span class="layout-user-downmenu-num" id="layoutUserOrderNum"></span></a>
+				</li>
+				<li class="layout-user-downmenu-item">
+					<a href="//me.meizu.com/member/message/index" class="layout-user-downmenu-link" data-mtype="click_wmz_public_grzx_notice" data-bh="click_wmz_public_grzx_notice">消息通知<span class="layout-user-downmenu-num" id="layoutUserMsgNum">1</span></a>
+				</li>
+				<li class="layout-user-downmenu-item">
+					<a href="//me.meizu.com/member/favorite/index" class="layout-user-downmenu-link" data-mtype="click_wmz_public_grzx_favorites" data-bh="click_wmz_public_grzx_favorites">我的收藏</a>
+				</li>
+				<li class="layout-user-downmenu-item">
+					<a href="//store.meizu.com/mformy/index" class="layout-user-downmenu-link" data-mtype="click_wmz_public_grzx_mformy" data-bh="click_wmz_public_grzx_mformy">M码通道</a>
+				</li>
+				<li class="layout-user-downmenu-item">
+					<a href="javascript:window.location.href='http://store.meizu.com/member/logout.htm?useruri='+ encodeURIComponent(encodeURIComponent(window.location.href));" class="layout-user-downmenu-link" data-mtype="click_wmz_public_grzx_quit" data-bh="click_wmz_public_grzx_quit">退出登录</a>
+				</li>
+			</ul>
+		</div>
+		<div class="mz-autocomlete-menu layout-service-search-menu hiding" style="height: 265px;">
+			<ul class="mz-autocomlete-menu-list">
+
+				<li class="mz-autocomlete-menu-item" tabindex="-1">
+					<span class="mz-autocomlete-menu-name" title="魅族 Note8">魅族 Note8</span>
+					<span class="mz-autocomlete-menu-num">约 3 种</span>
+				</li>
+
+				<li class="mz-autocomlete-menu-item" tabindex="-1">
+					<span class="mz-autocomlete-menu-name" title="16X">16X</span>
+					<span class="mz-autocomlete-menu-num">约 3 种</span>
+				</li>
+
+				<li class="mz-autocomlete-menu-item" tabindex="-1">
+					<span class="mz-autocomlete-menu-name" title="魅族 X8">魅族 X8</span>
+					<span class="mz-autocomlete-menu-num">约 3 种</span>
+				</li>
+
+				<li class="mz-autocomlete-menu-item" tabindex="-1">
+					<span class="mz-autocomlete-menu-name" title="魅族 V8">魅族 V8</span>
+					<span class="mz-autocomlete-menu-num">约 3 种</span>
+				</li>
+
+				<li class="mz-autocomlete-menu-item" tabindex="-1">
+					<span class="mz-autocomlete-menu-name" title="耳机">耳机</span>
+					<span class="mz-autocomlete-menu-num">约 15 种</span>
+				</li>
+
+				<li class="mz-autocomlete-menu-item" tabindex="-1">
+					<span class="mz-autocomlete-menu-name" title="蓝牙 耳机">蓝牙 耳机</span>
+					<span class="mz-autocomlete-menu-num">约 7 种</span>
+				</li>
+
+				<li class="mz-autocomlete-menu-item" tabindex="-1">
+					<span class="mz-autocomlete-menu-name" title="魅族 16th">魅族 16th</span>
+					<span class="mz-autocomlete-menu-num">约 5 种</span>
+				</li>
+
+				<li class="mz-autocomlete-menu-item" tabindex="-1">
+					<span class="mz-autocomlete-menu-name" title="移动电源">移动电源</span>
+					<span class="mz-autocomlete-menu-num">约 1 种</span>
+				</li>
+
+			</ul>
+		</div>
+
+	</body>
+
+</html>
