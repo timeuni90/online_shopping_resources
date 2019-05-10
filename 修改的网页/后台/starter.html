@@ -9,23 +9,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>后台管理</title>
-		<!-- Tell the browser to be responsive to screen width -->
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-		<!-- Font Awesome -->
 		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-		<!-- Ionicons -->
 		<link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-		<!-- Theme style -->
 		<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-		<!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-        page. However, you can choose any other skin. Make sure you
-        apply the skin class to the body tag so the changes take effect. -->
 		<link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
-
+		
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		
 		<!-- 新增style -->
 		<link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-
+		
 		<style>
 			td {
 				text-align: center;
@@ -277,7 +272,7 @@ desired effect
 							<a href="#"><i class="fa fa-link"></i> <span>Link</span></a>
 						</li>
 						<li>
-							<a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a>
+							<a href="#"><i class="fa fa-link"></i> <span>商品中心</span></a>
 						</li>
 						<li class="treeview">
 							<a href="#"><i class="fa fa-link"></i> <span>商品中心</span>
@@ -340,7 +335,7 @@ desired effect
 					</div>
 					<br>
 					<div class="row">
-						<div class="col-xs-12">
+						<div class="col-sm-12">
 
 							<!-- /.box -->
 
@@ -474,46 +469,184 @@ desired effect
 											<div class="form-group">
 												<label class="col-sm-2 control-label">商品名</label>
 												<div class="col-sm-10">
-													<input type="text" class="form-control" placeholder="商品名">
+													<input type="text" class="form-control" placeholder="输入商品名">
 												</div>
 											</div>
+											
+											<style>
+												#my_params .input_append {
+													padding-left: 0px; 
+													text-align: left;
+												}
+												
+												#my_params .input_append i, .my_params_value i{
+													cursor: pointer; 
+													color: #3d9970;
+												}
+												
+												.post_file {
+													cursor: pointer;	
+												}
+												
+												.post_file i {
+													color: #337ab7;	
+												}
+												.fengexian {
+													border-bottom: 1px solid #3d9970;
+												}			
+											</style>
 											<div class="form-group">
-												<label class="col-sm-2 control-label">售价</label>
-												<div class="col-sm-10">
-													<input type="text" class="form-control" placeholder="售价">
-												</div>
-											</div>
-											<div class="form-group">
-												<label class="col-sm-2 control-label">封面上传</label>
-												<div class="col-sm-10">
-													<input multiple type="file">
-												</div>
-											</div>
-											<div class="form-group">
-												<div class="col-sm-offset-2 col-sm-10">
-													<div class="radio">
-														<label class="radio-inline">
-	  														<input type="radio"> 上架
-														</label>
-														<label class="radio-inline">
-	  														<input type="radio"> 下架
-														</label>
+												<label class="col-sm-2 control-label">上传图片</label>
+												<div class="col-sm-7">
+													<div class="input-group">
+														<input type="text" readonly="readonly" class="form-control">
+														<span class="input-group-addon post_file" title="上传图片">
+															<input type="file" accept="image/*" multiple="multiple" style="display: none;">
+															<i class="fa fa-fw fa-image (alias)"></i>
+														</span>
 													</div>
 												</div>
 											</div>
 											<div class="form-group">
-												<div class="col-sm-offset-2 col-sm-10">
-													<div class="checkbox">
-														<label>
-                        									<input type="checkbox"> Remember me
-                     						 			</label>
+												<label class="col-sm-2 control-label">上传视频</label>
+												<div class="col-sm-7">
+													<div class="input-group">
+														<input type="text" readonly="readonly" class="form-control">
+														<span class="input-group-addon post_file" title="上传视频">
+															<input type="file" accept="video/*" style="display: none;">
+															<i class="fa fa-fw fa-video-camera"></i>
+														</span>
 													</div>
 												</div>
 											</div>
+											<div id="my_params">
+												<div class="form-group">
+													<label class="col-sm-2 control-label">参数名</label>
+													<div class="col-sm-7">
+														<input type="text" class="form-control" placeholder="">
+													</div>
+													<label class="col-sm-1 control-label input_append">
+														<i class="fa fa-fw fa-plus-circle" id="param_name_adder" title="添加参数名"></i>
+													</label>
+												</div>
+											</div>
+											<div id="my_params_value_group">
+												<div class="my_params_value">
+													<h5 class="page-header fengexian"></h5>
+													<div class="form-group">
+														<label class="col-sm-2 control-label">
+															<i class="fa fa-fw fa-plus-circle" id="param_value_adder" title="添加参数值"></i>
+															参数值
+														</label>
+														<div class="col-sm-7">
+															<div class="input-group">
+																<span class="input-group-addon"></span>
+																<input type="text" class="form-control">
+																<span class="input-group-addon post_file" id="hapi" title="上传图片">
+																	<input type="file" accept="image/*" style="display: none;">
+																	<i class="fa fa-fw fa-file-image-o"></i>
+																</span>
+															</div>
+														</div>
+													</div>
+													<div class="form-group my_sale_price">
+														<label class="col-sm-2 control-label"></label>
+														<div class="col-sm-7">
+															<div class="input-group">
+																<span class="input-group-addon">售价￥</span>
+																<input type="text" class="form-control" placeholder="0.00">
+															</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-2 control-label"></label>
+														<div class="col-sm-7">
+															<div class="input-group">
+																<span class="input-group-addon">库存</span>
+																<input type="text" class="form-control" placeholder="">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											
 										</div>
 										<!-- /.box-body -->
 									</form>
 								</div>
+								<script>
+									/* 增加key */
+									function addParamInput() {
+										$(this).parent().remove();
+										var	form_group = `<div class="form-group">
+															<label class="col-sm-2 control-label"></label>
+															<div class="col-sm-7">
+																<input type="text" class="form-control" placeholder="">
+															</div>
+															<label class="col-sm-1 control-label input_append">
+																<i class="fa fa-fw fa-plus-circle" id="param_name_adder" title="添加参数名"></i>
+															</label>
+														  </div>`;
+										$("#my_params").append(form_group);
+										$("#my_params input:last-child").keyup(synchroniseKeyValue);
+										form_group = `<div class="form-group">
+														<label class="col-sm-2 control-label"></label>
+															<div class="col-sm-7">
+																<div class="input-group">
+																	<span class="input-group-addon"></span>
+																	<input type="text" class="form-control">
+																	<span class="a input-group-addon post_file" title="上传图片">
+																		<input type="file" accept="image/*" style="display: none;">
+																		<i class="fa fa-fw fa-file-image-o"></i>
+																	</span>
+																</div>
+															</div>
+													  </div>`;
+										$(".my_params_value .my_sale_price").before(form_group);
+										//$(".my_params_value .post_file:last-child").click(selectImages);
+										$.each($(".my_params_value"), function(i, n) {
+											$(n).find(".post_file").last().click(selectImages);
+										});
+										$("#param_name_adder").click(addParamInput);
+									}
+									/* 增加key */
+									$("#param_name_adder").click(addParamInput);
+									/* 将key值同步到value */
+									function synchroniseKeyValue() {
+										var current = this;
+										var index = 0;
+										$.each($("#my_params input"), function(i, n) {
+											if(current == n) {
+												index = i;
+												return false;
+											}
+										});
+										$.each($(".my_params_value"), function(i, n) {
+											$(this).find(":text:eq(" + index + ")").prev().text($(current).val())
+										});
+									}
+									$("#my_params input").keyup(synchroniseKeyValue);
+									/* 增加参数值 */
+									$("#param_value_adder").click(function() {
+										var copy = $(this).parent().parent().parent().clone(true);
+										copy.find("input").val("");
+										$("#my_params_value_group").append(copy);
+										$(this).remove();
+									});
+									/* 选择图片 */
+									function selectImages() {
+										$(this).find("input")[0].click();
+									}
+									$(".post_file").click(selectImages);
+									/* file内容发生改变时触发 */
+									$(".post_file input").on("change", function() {
+										var value = "";
+										$.each($(this)[0].files, function(i, n) {
+											value += n.name + "   ";
+										});
+										$(this).parent().prev().val(value);
+									})
+								</script>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
 									<button type="button" class="btn btn-primary">Save changes</button>
@@ -611,16 +744,8 @@ desired effect
   immediately after the control sidebar -->
 			<div class="control-sidebar-bg"></div>
 		</div>
-		<!-- ./wrapper -->
 
-		<!-- REQUIRED JS SCRIPTS -->
-
-		<!-- jQuery 3 -->
-
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<!-- Bootstrap 3.3.7 -->
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<!-- AdminLTE App -->
 		<script src="dist/js/adminlte.min.js"></script>
 
 		<!-- Optionally, you can add Slimscroll and FastClick plugins.
